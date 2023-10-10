@@ -1,0 +1,29 @@
+input_dir: AMSI/Resources/
+output_dir: AMSI/Generated/
+
+strings:
+  inputs:
+    - LocalizedStrings/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: LocalizedStrings.swift
+      params:
+        enumName: LocalizedStrings
+
+xcassets:
+  inputs:
+    - Assets/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+        enumName: Assets
+      output: Assets.swift
+
+fonts:
+  inputs: Fonts
+  outputs:
+    templateName: swift5
+    output: Fonts.swift
+    params:
+        enumName: Fonts

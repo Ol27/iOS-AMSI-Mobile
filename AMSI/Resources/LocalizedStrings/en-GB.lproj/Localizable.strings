@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  AMSI
+
+  Created by Anton Petrov on 09.10.2023.
+  
+*/
+
+// MARK: - Onboarding screen
+
+"AMSI" = "AMSI";

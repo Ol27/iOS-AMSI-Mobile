@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  AMSI
+
+  Created by Anton Petrov on 09.10.2023.
+  
+*/
+
+// MARK: - Onboarding screen
+
+"FirtstOnboardingTitle" = "Upload your resume";
+"SecondOnboardingTitle" = "Find Your Dream Job";
+"ThirdOnboardingTitle" = "Get your dream job";
+"FirtstOnboardingText" = "To do this, fill out our \nconvenient form";
+"SecondOnboardingText" = "Search and find your dream job \neasily and quickly";
+"ThirdOnboardingText" = "Get your dream job & start working \nin a new company";
+"SkipButton" = "Skip";
+
+// MARK: - Authorization screen
+
+"WelcomeTitle" = "Let’s Get Started";
+"WelcomeText" = "Welcome  to Amsi find job \nyour dream";
+"EmailButton" = "Continue with Email";
+"ContinuteWithGoogleButton" = "Continue with Google";
+"DontHaveAccountText" = "Don’t have an account?";
+"SignUpButton" = " Sign Up";
+
+// MARK: - SignUp screen
+
+"CreateAccount" = "Create an account";
+"FullName" = "Your full name";
+"Email" = "Email";
+"Password" = "Password";
+"OrSeparator" = "Or";
+"SignInWithGoogle" = "Sign In with Google";
+
+// MARK: - Verification screen
+
+"VerificationCode" = "Verification Code";
+"SendVerificationToEmail" = "We have to send the verification to your email";
+"ResendCode" = "Resend code";
+"VerifyButton" = "Verify";
+
+// MARK: - Success screen
+
+"ChangePasswordSuccess" = "You have successfully \nchanged your password";
+"VerifySuccess" = "You have successfully \nverified your account";
+"LoginButton" = "Login";
+
+// MARK: - Login screen
+
+"LoginTitle" = "Login";
+"ForgotPassword" = "Forgot Password?";
+"SignInButton" = "Sign In";
