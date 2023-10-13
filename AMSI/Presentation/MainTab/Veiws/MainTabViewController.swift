@@ -21,7 +21,7 @@ final class MainTabViewController: UIViewController {
         view.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
         }
     }
 }

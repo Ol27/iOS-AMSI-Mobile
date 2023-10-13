@@ -8,10 +8,13 @@
 import UIKit
 
 final class AuthorizationViewController: UIViewController {
+    // MARK: - UI Elements
+
     private let logoImageView = UIImageView().apply {
         $0.image = Assets.Images.Authorization.amsiLogo.image
         $0.contentMode = .scaleAspectFit
     }
+
     private let titleLabel = CustomStyleLabel(text: LocalizedStrings.welcomeTitle,
                                               fontSize: 20,
                                               isBold: true,
@@ -20,24 +23,31 @@ final class AuthorizationViewController: UIViewController {
                                                  fontSize: 16,
                                                  fontColor: Assets.Colors.Shared.secondaryText.color,
                                                  alignment: .center,
-                                             numberOfLines: 0)
+                                                 numberOfLines: 0)
     private let pictureImageView = UIImageView().apply {
         $0.contentMode = .scaleAspectFit
         $0.image = Assets.Images.Authorization.authorizationImage.image
     }
+
     private let emailButton = FilledButton(text: LocalizedStrings.emailButton)
-    private let googleButton = GoogleButton(text: LocalizedStrings.continuteWithGoogleButton)
+    private let googleButton = GoogleButton(text: LocalizedStrings.continueWithGoogleButton)
     private lazy var signUpButton = UIButton().apply {
         $0.setAttributedTitle(createAttributedText(), for: .normal)
     }
 
+    // MARK: - Properties
+
     weak var coordinator: Coordinator?
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupSelectors()
     }
+
+    // MARK: - Actions
 
     @objc private func didTapSignUpButton() {
         coordinator?.navigateToSignUp()
@@ -46,6 +56,12 @@ final class AuthorizationViewController: UIViewController {
     @objc private func didTapEmailButton() {
         coordinator?.navigateToLogin()
     }
+
+    @objc private func didTapGoogleButton() {
+        coordinator?.signIn()
+    }
+
+    // MARK: - Setup
 
     private func setupUI() {
         view.backgroundColor = Assets.Colors.Shared.screenBackground.color
@@ -104,22 +120,25 @@ final class AuthorizationViewController: UIViewController {
     private func setupSelectors() {
         signUpButton.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
         emailButton.addTarget(self, action: #selector(didTapEmailButton), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
     }
+
+    // MARK: - Helpers
 
     private func createAttributedText() -> NSAttributedString {
         let firstText = LocalizedStrings.dontHaveAccountText
-            let firstAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.black,
-                .font: Fonts.NotoSansJP.regular.font(size: 14)
-            ]
-            let firstAttributedString = NSMutableAttributedString(string: firstText, attributes: firstAttributes)
-            let secondText = LocalizedStrings.signUpButton
-            let secondAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.orange,
-                .font: Fonts.NotoSansJP.bold.font(size: 14)
-            ]
-            let secondAttributedString = NSMutableAttributedString(string: secondText, attributes: secondAttributes)
-            firstAttributedString.append(secondAttributedString)
-            return firstAttributedString
-        }
+        let firstAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+            .font: Fonts.NotoSansJP.regular.font(size: 14)
+        ]
+        let firstAttributedString = NSMutableAttributedString(string: firstText, attributes: firstAttributes)
+        let secondText = LocalizedStrings.signUpButton
+        let secondAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.orange,
+            .font: Fonts.NotoSansJP.bold.font(size: 14)
+        ]
+        let secondAttributedString = NSMutableAttributedString(string: secondText, attributes: secondAttributes)
+        firstAttributedString.append(secondAttributedString)
+        return firstAttributedString
+    }
 }

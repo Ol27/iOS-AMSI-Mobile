@@ -5,11 +5,10 @@
 //  Created by Anton Petrov on 09.10.2023.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class CustomStyleSeparator: UIView {
-
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -27,6 +26,7 @@ final class CustomStyleSeparator: UIView {
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -43,7 +43,7 @@ final class CustomStyleSeparator: UIView {
             make.center.equalToSuperview()
         }
 
-        self.snp.makeConstraints { make in
+        snp.makeConstraints { make in
             make.height.equalTo(22)
         }
     }

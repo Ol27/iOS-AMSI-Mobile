@@ -8,6 +8,7 @@
 import UIKit
 
 final class OnboardingViewController: UIViewController {
+    // MARK: - UI elements
 
     private let backgroundImageView = UIImageView().apply {
         $0.contentMode = .scaleToFill
@@ -31,6 +32,8 @@ final class OnboardingViewController: UIViewController {
                                              numberOfLines: 0)
     private let nextButton = UIButton()
 
+    // MARK: - Properties
+
     private var currentElement: OnboardingElement = .first {
         didSet {
             updateUI(for: currentElement)
@@ -38,6 +41,8 @@ final class OnboardingViewController: UIViewController {
     }
 
     weak var coordinator: Coordinator?
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,8 @@ final class OnboardingViewController: UIViewController {
         super.viewWillAppear(animated)
         hideNavigationBar()
     }
+
+    // MARK: - Actions
 
     @objc private func nextButtonTapped() {
         switch currentElement {
@@ -64,6 +71,8 @@ final class OnboardingViewController: UIViewController {
     @objc private func skipButtonPressed() {
         coordinator?.dismissOnboarding()
     }
+
+    // MARK: - Setup
 
     private func setupUI() {
         view.addSubview(backgroundImageView)

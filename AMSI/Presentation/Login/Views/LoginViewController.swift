@@ -9,9 +9,12 @@ import SnapKit
 import UIKit
 
 final class LoginViewController: UIViewController {
+    // MARK: - UI Elements
+
     private let scrollView = UIScrollView().apply {
         $0.isScrollEnabled = false
     }
+
     private let contentView = UIView()
     private let imageView = UIImageView().apply {
         $0.image = Assets.Images.Login.loginImage.image
@@ -31,10 +34,7 @@ final class LoginViewController: UIViewController {
     private let emailTextField = AuthorizationTextField(placeholderText: LocalizedStrings.email,
                                                         icon: Assets.Images.SignUp.emailIcon.image)
 
-    private let passwordTextField = AuthorizationTextField(placeholderText: LocalizedStrings.password,
-                                                           icon: Assets.Images.SignUp.paswordIcon.image).apply {
-        $0.textField.isSecureTextEntry = true
-    }
+    private let passwordTextField = PasswordTextField()
 
     private let forgotPasswordLabel = CustomStyleLabel(text: LocalizedStrings.forgotPassword,
                                                        fontSize: 14,
@@ -47,11 +47,11 @@ final class LoginViewController: UIViewController {
 
     private let separator = CustomStyleSeparator()
 
-    private let showPasswordButton = UIButton().apply {
-        $0.setImage(Assets.Images.SignUp.showPasswordButton.image, for: .normal)
-    }
+    // MARK: - Properties
 
     weak var coordinator: Coordinator?
+
+    // MARK: - Lifecycle
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -67,16 +67,18 @@ final class LoginViewController: UIViewController {
         setupNavigationBar()
     }
 
+    // MARK: - Actions
+
     @objc private func didTapSignInButton() {
         coordinator?.signIn()
     }
 
-    @objc private func didTapShowPassword() {
-        passwordTextField.textField.isSecureTextEntry.toggle()
-        let image = passwordTextField.textField.isSecureTextEntry
-        ? Assets.Images.SignUp.showPasswordButton.image
-        : Assets.Images.SignUp.hidePasswordButton.image
-        showPasswordButton.setImage(image, for: .normal)
+    @objc private func didTapForgotPassword() {
+        coordinator?.navigateToForgotPassword()
+    }
+
+    @objc private func didTapGoogleButton() {
+        coordinator?.signIn()
     }
 
     @objc private func keyboardWillShow(notification: Notification) {
@@ -95,6 +97,8 @@ final class LoginViewController: UIViewController {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.isScrollEnabled = false
     }
+
+    // MARK: - Setup
 
     private func setupUI() {
         view.backgroundColor = Assets.Colors.Shared.screenBackground.color
@@ -148,13 +152,6 @@ final class LoginViewController: UIViewController {
         inputContainerStackView.addArrangedSubview(emailTextField)
         inputContainerStackView.addArrangedSubview(passwordTextField)
 
-        passwordTextField.addSubview(showPasswordButton)
-        showPasswordButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().inset(20)
-            make.width.height.equalTo(20)
-        }
-
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(inputContainerStackView.snp.top).offset(-24)
@@ -171,8 +168,11 @@ final class LoginViewController: UIViewController {
     }
 
     private func setupSelectors() {
-        showPasswordButton.addTarget(self, action: #selector(didTapShowPassword), for: .touchUpInside)
         signIn.addTarget(self, action: #selector(didTapSignInButton), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapForgotPassword))
+        forgotPasswordLabel.isUserInteractionEnabled = true
+        forgotPasswordLabel.addGestureRecognizer(tapGesture)
     }
 
     private func liftBottomViews(keyboardHeight: CGFloat) {

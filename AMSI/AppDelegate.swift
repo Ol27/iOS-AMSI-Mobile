@@ -18,6 +18,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         mainCoordinator = MainCoordinator(window: window)
         mainCoordinator?.start()
+        setupAppearances()
         return true
+    }
+
+    private func setupAppearances() {
+        UITableView.appearance().backgroundColor = .clear
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = .clear
+        UICollectionView.appearance().backgroundColor = .clear
     }
 }

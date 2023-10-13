@@ -1,5 +1,5 @@
 //
-//   SuccessViewController.swift
+//    SuccessViewController.swift
 //  AMSI
 //
 //  Created by Anton Petrov on 10.10.2023.
@@ -9,10 +9,13 @@ import SnapKit
 import UIKit
 
 final class SuccessViewController: UIViewController {
+    // MARK: - UI Elements
+
     private let imageView = UIImageView().apply {
         $0.contentMode = .scaleAspectFit
         $0.image = Assets.Images.Success.successImage.image
     }
+
     private let successLabel = CustomStyleLabel(fontSize: 20,
                                                 isBold: true,
                                                 alignment: .center,
@@ -20,13 +23,13 @@ final class SuccessViewController: UIViewController {
 
     private let loginButton = FilledButton(text: LocalizedStrings.loginButton)
 
-    enum SuccessType {
-        case changePassword
-        case verify
-    }
+    // MARK: - Properties
+
     weak var coordinator: Coordinator?
 
-    init(successType: SuccessType) {
+    // MARK: - Initialization
+
+    init(successType: VerificationType) {
         super.init(nibName: nil, bundle: nil)
         switch successType {
         case .changePassword:
@@ -41,6 +44,8 @@ final class SuccessViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -48,26 +53,17 @@ final class SuccessViewController: UIViewController {
         setupBackButton()
     }
 
+    // MARK: - Actions
+
     @objc private func didTapLoginButton() {
         coordinator?.popToLogin()
-    }
-
-    func setupBackButton() {
-        let image = Assets.Images.Success.crossBackButton.image.withRenderingMode(.alwaysOriginal)
-        let backButton = UIBarButtonItem(image: image,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(self.didTapBackButton))
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
-                                                           style: .plain,
-                                                           target: nil,
-                                                           action: nil)
-        navigationItem.leftBarButtonItem = backButton
     }
 
     @objc private func didTapBackButton() {
         coordinator?.popToLogin()
     }
+
+    // MARK: - Setup
 
     private func setupUI() {
         view.backgroundColor = Assets.Colors.Shared.screenBackground.color
@@ -91,6 +87,19 @@ final class SuccessViewController: UIViewController {
             make.height.equalTo(56)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
+    }
+
+    func setupBackButton() {
+        let image = Assets.Images.Success.crossBackButton.image.withRenderingMode(.alwaysOriginal)
+        let backButton = UIBarButtonItem(image: image,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(didTapBackButton))
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                           style: .plain,
+                                                           target: nil,
+                                                           action: nil)
+        navigationItem.leftBarButtonItem = backButton
     }
 
     private func setupSelectors() {

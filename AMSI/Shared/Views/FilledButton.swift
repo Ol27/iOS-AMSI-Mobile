@@ -5,8 +5,8 @@
 //  Created by Anton Petrov on 09.10.2023.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class FilledButton: UIButton {
     init(text: String) {
@@ -16,6 +16,7 @@ final class FilledButton: UIButton {
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -23,11 +24,11 @@ final class FilledButton: UIButton {
     // MARK: - UI Setup
 
     private func setupUI() {
-        self.backgroundColor = Assets.Colors.Shared.mainAccent.color
-        self.setTitleColor(Assets.Colors.Shared.filledButtonText.color, for: .normal)
-        self.titleLabel?.font = Fonts.NotoSansJP.bold.font(size: 14)
-        self.layer.cornerRadius = 8
-        self.snp.makeConstraints { (make) in
+        backgroundColor = Assets.Colors.Shared.mainAccent.color
+        setTitleColor(Assets.Colors.Shared.filledButtonText.color, for: .normal)
+        titleLabel?.font = Fonts.NotoSansJP.bold.font(size: 14)
+        layer.cornerRadius = 8
+        snp.makeConstraints { make in
             make.height.equalTo(56)
         }
     }

@@ -5,8 +5,8 @@
 //  Created by Anton Petrov on 09.10.2023.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class AuthorizationTextField: UIView {
     let textField: UITextField = {
@@ -17,6 +17,8 @@ final class AuthorizationTextField: UIView {
         textField.spellCheckingType = .no
         textField.smartQuotesType = .no
         textField.returnKeyType = .done
+        textField.textContentType = .none
+        textField.font = Fonts.NotoSansJP.regular.font(size: 14)
         return textField
     }()
 
@@ -33,7 +35,7 @@ final class AuthorizationTextField: UIView {
         return imageView
     }()
 
-    init(placeholderText: String, icon: UIImage?) {
+    init(placeholderText: String = "", icon: UIImage? = nil) {
         super.init(frame: .zero)
 
         let attributedPlaceholder = NSAttributedString(
@@ -52,6 +54,7 @@ final class AuthorizationTextField: UIView {
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,7 +63,7 @@ final class AuthorizationTextField: UIView {
         snp.makeConstraints { make in
             make.height.equalTo(56)
         }
-        
+
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -74,7 +77,7 @@ final class AuthorizationTextField: UIView {
         textField.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalTo(iconImageView.snp.right).offset(12)
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(52)
             make.top.bottom.equalToSuperview()
         }
         textField.delegate = self
@@ -89,8 +92,10 @@ extension AuthorizationTextField: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        if textField.text?.isEmpty ?? true {
-            layer.borderWidth = 0.0
-        }
+        layer.borderWidth = 0.0
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }

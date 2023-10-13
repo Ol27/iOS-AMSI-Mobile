@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     func setupTitleLogo() {
-         let logoImageView = UIImageView().apply {
+        let logoImageView = UIImageView().apply {
             $0.image = Assets.Images.Authorization.amsiLogo.image
             $0.contentMode = .scaleAspectFit
         }

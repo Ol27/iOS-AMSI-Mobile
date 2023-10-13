@@ -43,6 +43,20 @@ internal enum Assets {
       internal static let authorizationImage = ImageAsset(name: "AuthorizationImage")
       internal static let googleLogo = ImageAsset(name: "googleLogo")
     }
+    internal enum FillData {
+      internal static let addPhotoIcon = ImageAsset(name: "addPhotoIcon")
+      internal static let addPhotoPlaceholder = ImageAsset(name: "addPhotoPlaceholder")
+      internal static let addressIcon = ImageAsset(name: "addressIcon")
+      internal static let contactInfoIcon = ImageAsset(name: "contactInfoIcon")
+      internal static let nextButton = ImageAsset(name: "nextButton")
+      internal static let pageOne = ImageAsset(name: "pageOne")
+      internal static let pageThree = ImageAsset(name: "pageThree")
+      internal static let pageTwo = ImageAsset(name: "pageTwo")
+      internal static let usaFlag = ImageAsset(name: "usaFlag")
+    }
+    internal enum ForgotPassword {
+      internal static let forgotPassword = ImageAsset(name: "ForgotPassword")
+    }
     internal enum Home {
       internal static let homeScreen = ImageAsset(name: "HomeScreen")
     }
@@ -61,6 +75,8 @@ internal enum Assets {
     internal enum Shared {
       internal static let backButton = ImageAsset(name: "BackButton")
       internal static let orSeparator = ImageAsset(name: "OrSeparator")
+      internal static let pickArrow = ImageAsset(name: "pickArrow")
+      internal static let selectedArrow = ImageAsset(name: "selectedArrow")
     }
     internal enum SignUp {
       internal static let emailIcon = ImageAsset(name: "EmailIcon")

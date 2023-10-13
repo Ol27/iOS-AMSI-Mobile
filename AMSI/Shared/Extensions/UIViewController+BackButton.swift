@@ -13,7 +13,7 @@ extension UIViewController {
         let backButton = UIBarButtonItem(image: image,
                                          style: .plain,
                                          target: self,
-                                         action: #selector(self.didTapCustomBackButton))
+                                         action: #selector(didTapCustomBackButton))
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
                                                            style: .plain,
                                                            target: nil,

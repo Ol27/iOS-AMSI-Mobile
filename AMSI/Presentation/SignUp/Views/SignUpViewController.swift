@@ -9,9 +9,12 @@ import SnapKit
 import UIKit
 
 final class SignUpViewController: UIViewController {
+    // MARK: - UI elements
+
     private let scrollView = UIScrollView().apply {
         $0.isScrollEnabled = false
     }
+
     private let contentView = UIView()
     private let titleLabel = CustomStyleLabel(text: LocalizedStrings.createAccount,
                                               fontSize: 20,
@@ -28,10 +31,7 @@ final class SignUpViewController: UIViewController {
     private let emailTextField = AuthorizationTextField(placeholderText: LocalizedStrings.email,
                                                         icon: Assets.Images.SignUp.emailIcon.image)
 
-    private let passwordTextField = AuthorizationTextField(placeholderText: LocalizedStrings.password,
-                                                           icon: Assets.Images.SignUp.paswordIcon.image).apply {
-        $0.textField.isSecureTextEntry = true
-    }
+    private let passwordTextField = PasswordTextField()
 
     private let signUpButton = FilledButton(text: LocalizedStrings.signUpButton)
 
@@ -39,11 +39,11 @@ final class SignUpViewController: UIViewController {
 
     private let separator = CustomStyleSeparator()
 
-    private let showPasswordButton = UIButton().apply {
-        $0.setImage(Assets.Images.SignUp.showPasswordButton.image, for: .normal)
-    }
+    // MARK: - Properties
 
     weak var coordinator: Coordinator?
+
+    // MARK: - Lifecycle
 
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -59,16 +59,14 @@ final class SignUpViewController: UIViewController {
         setupNavigationBar()
     }
 
+    // MARK: - Actions
+
     @objc private func didTapSignUpButton() {
         coordinator?.navigateToVerification()
     }
 
-    @objc private func didTapShowPassword() {
-        passwordTextField.textField.isSecureTextEntry.toggle()
-        let image = passwordTextField.textField.isSecureTextEntry
-        ? Assets.Images.SignUp.showPasswordButton.image
-        : Assets.Images.SignUp.hidePasswordButton.image
-        showPasswordButton.setImage(image, for: .normal)
+    @objc private func didTapGoogleButton() {
+        coordinator?.signIn()
     }
 
     @objc private func keyboardWillShow(notification: Notification) {
@@ -84,10 +82,9 @@ final class SignUpViewController: UIViewController {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {
             self.scrollView.contentOffset = CGPoint(x: 0, y: 64)
-             self.liftBottomViews(keyboardHeight: keyboardFrame.height)
-             self.view.layoutIfNeeded()
-         }
-
+            self.liftBottomViews(keyboardHeight: keyboardFrame.height)
+            self.view.layoutIfNeeded()
+        }
     }
 
     @objc private func keyboardWillHide(notification: Notification) {
@@ -98,6 +95,8 @@ final class SignUpViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+
+    // MARK: - Setup
 
     private func setupUI() {
         view.backgroundColor = Assets.Colors.Shared.screenBackground.color
@@ -127,13 +126,6 @@ final class SignUpViewController: UIViewController {
         inputContainerStackView.addArrangedSubview(emailTextField)
         inputContainerStackView.addArrangedSubview(passwordTextField)
 
-        passwordTextField.addSubview(showPasswordButton)
-        showPasswordButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().inset(20)
-            make.width.height.equalTo(20)
-        }
-
         contentView.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.top.equalTo(inputContainerStackView.snp.bottom).offset(32)
@@ -146,8 +138,8 @@ final class SignUpViewController: UIViewController {
     }
 
     private func setupSelectors() {
-        showPasswordButton.addTarget(self, action: #selector(didTapShowPassword), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
     }
 
     private func setupBottomViews() {

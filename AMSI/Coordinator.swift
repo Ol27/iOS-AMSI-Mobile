@@ -15,14 +15,18 @@ protocol Coordinator: AnyObject {
     func popToLogin()
     func navigateToSignUp()
     func navigateToVerification()
-    func navigateToVerificationSucess()
+    func navigateToVerificationSuccess()
+    func navigateToChangePasswordVerification()
+    func navigateToChangePasswordSuccess()
+    func navigateToChangePassword()
+    func navigateToForgotPassword()
     func signIn()
     func dismissOnboarding()
 }
 
 final class MainCoordinator: Coordinator {
     var window: UIWindow?
-    var navigationController: UINavigationController = UINavigationController()
+    var navigationController: UINavigationController = .init()
 
     init(window: UIWindow?) {
         self.window = window
@@ -30,9 +34,9 @@ final class MainCoordinator: Coordinator {
 
     func start() {
         let splashViewController = SplashViewController()
-         splashViewController.coordinator = self
-         window?.rootViewController = splashViewController
-         window?.makeKeyAndVisible()
+        splashViewController.coordinator = self
+        window?.rootViewController = splashViewController
+        window?.makeKeyAndVisible()
     }
 
     func setupMainNavigationFlow() {
@@ -43,6 +47,7 @@ final class MainCoordinator: Coordinator {
     }
 
     func navigateToOnboarding() {
+//        guard !SettingsManager.shared.didShowOnboarding else { return }
         let onboardingVC = OnboardingViewController()
         onboardingVC.coordinator = self
         onboardingVC.modalPresentationStyle = .overFullScreen
@@ -56,7 +61,9 @@ final class MainCoordinator: Coordinator {
     }
 
     func dismissOnboarding() {
-        navigationController.dismiss(animated: true, completion: nil)
+        navigationController.dismiss(animated: true) {
+            SettingsManager.shared.didShowOnboarding = true
+        }
     }
 
     func navigateToSignUp() {
@@ -71,7 +78,7 @@ final class MainCoordinator: Coordinator {
         navigationController.pushViewController(verificationVC, animated: true)
     }
 
-    func navigateToVerificationSucess() {
+    func navigateToVerificationSuccess() {
         let successVC = SuccessViewController(successType: .verify)
         successVC.coordinator = self
         navigationController.pushViewController(successVC, animated: true)
@@ -92,5 +99,35 @@ final class MainCoordinator: Coordinator {
     func signIn() {
         let verificationVC = MainTabViewController()
         navigationController.pushViewController(verificationVC, animated: true)
+//        guard !SettingsManager.shared.didFilledData else { return }
+        let fillDataVC = FillDataViewController()
+        fillDataVC.coordinator = self
+        let fillDataNavigationVC = UINavigationController(rootViewController: fillDataVC)
+        fillDataNavigationVC.modalPresentationStyle = .overFullScreen
+        navigationController.present(fillDataNavigationVC, animated: true, completion: nil)
+    }
+
+    func navigateToForgotPassword() {
+        let successVC = ForgotPasswordViewController()
+        successVC.coordinator = self
+        navigationController.pushViewController(successVC, animated: true)
+    }
+
+    func navigateToChangePasswordVerification() {
+        let verificationVC = VerificationViewController(verificationType: .changePassword)
+        verificationVC.coordinator = self
+        navigationController.pushViewController(verificationVC, animated: true)
+    }
+
+    func navigateToChangePasswordSuccess() {
+        let successVC = SuccessViewController(successType: .changePassword)
+        successVC.coordinator = self
+        navigationController.pushViewController(successVC, animated: true)
+    }
+
+    func navigateToChangePassword() {
+        let passwordVC = ResetPasswordViewController()
+        passwordVC.coordinator = self
+        navigationController.pushViewController(passwordVC, animated: true)
     }
 }

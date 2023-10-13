@@ -9,7 +9,6 @@ import SnapKit
 import UIKit
 
 final class GoogleButton: UIButton {
-
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -28,11 +27,13 @@ final class GoogleButton: UIButton {
         super.init(frame: .zero)
         iconImageView.image = icon
         label.text = text
+        isUserInteractionEnabled = false
         addSubview(iconImageView)
         addSubview(label)
         setupUI()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

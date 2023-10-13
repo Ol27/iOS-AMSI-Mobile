@@ -10,21 +10,24 @@ import SnapKit
 import UIKit
 
 final class VerificationViewController: UIViewController {
+    // MARK: - UI Elements
+
     private let imageView = UIImageView().apply {
         $0.contentMode = .scaleAspectFit
         $0.image = Assets.Images.Verification.verificationImage.image
     }
+
     private let verificationLabel = CustomStyleLabel(text: LocalizedStrings.verificationCode,
-                                              fontSize: 24,
-                                              isBold: true,
-                                              alignment: .center)
+                                                     fontSize: 24,
+                                                     isBold: true,
+                                                     alignment: .center)
 
     private let infoLabel = CustomStyleLabel(text: LocalizedStrings.sendVerificationToEmail,
-                                              fontSize: 14,
+                                             fontSize: 14,
                                              fontColor: Assets.Colors.Shared.secondaryText.color,
-                                              alignment: .center)
+                                             alignment: .center)
 
-    private let emailLabel = CustomStyleLabel(text: "am**@mail.com",
+    private let emailLabel = CustomStyleLabel(text: "am**@gmail.com",
                                               fontSize: 14,
                                               isBold: true,
                                               alignment: .center)
@@ -47,11 +50,28 @@ final class VerificationViewController: UIViewController {
 
     private let verifyButton = FilledButton(text: LocalizedStrings.verifyButton)
 
+    // MARK: - Properties
+
+    private let verificationType: VerificationType
     weak var coordinator: Coordinator?
+
+    // MARK: - Initialization
+
+    init(verificationType: VerificationType = .verify) {
+        self.verificationType = verificationType
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +82,15 @@ final class VerificationViewController: UIViewController {
         setupTitleLogo()
     }
 
+    // MARK: - Actions
+
     @objc private func didTapVerifyButton() {
-        coordinator?.navigateToVerificationSucess()
+        switch verificationType {
+        case .changePassword:
+            coordinator?.navigateToChangePassword()
+        case .verify:
+            coordinator?.navigateToVerificationSuccess()
+        }
     }
 
     @objc private func keyboardWillShow(notification: Notification) {
@@ -80,9 +107,8 @@ final class VerificationViewController: UIViewController {
                 make.height.equalTo(22)
                 make.bottom.equalTo(verifyButton.snp.top).offset(-16)
             }
-             self.view.layoutIfNeeded()
-         }
-
+            self.view.layoutIfNeeded()
+        }
     }
 
     @objc private func keyboardWillHide(notification: Notification) {
@@ -101,6 +127,8 @@ final class VerificationViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+
+    // MARK: - Setup
 
     private func setupUI() {
         view.backgroundColor = Assets.Colors.Shared.screenBackground.color
@@ -152,7 +180,6 @@ final class VerificationViewController: UIViewController {
             make.bottom.equalTo(verificationLabel.snp.top).offset(-8)
             make.left.right.equalToSuperview()
         }
-
     }
 
     private func setupSelectors() {

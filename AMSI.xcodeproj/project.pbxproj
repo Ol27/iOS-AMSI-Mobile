@@ -37,8 +37,28 @@
 		3A1406212AD4AD5900ED8636 /* UIViewController+TitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406202AD4AD5900ED8636 /* UIViewController+TitleLogo.swift */; };
 		3A1406242AD4B43900ED8636 /* CHIOTPField in Frameworks */ = {isa = PBXBuildFile; productRef = 3A1406232AD4B43900ED8636 /* CHIOTPField */; };
 		3A1406262AD54E1100ED8636 /*  SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406252AD54E1100ED8636 /*  SuccessViewController.swift */; };
-		3A14062A2AD5625100ED8636 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406292AD5625100ED8636 /* LoginViewController.swift */; };
 		3A14062F2AD57EFF00ED8636 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14062E2AD57EFF00ED8636 /* MainTabViewController.swift */; };
+		3A1406802AD6ACBC00ED8636 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14067F2AD6ACBC00ED8636 /* PasswordTextField.swift */; };
+		3A1406832AD6AEF800ED8636 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406822AD6AEF800ED8636 /* ResetPasswordViewController.swift */; };
+		3A6D6E512AD81600003EE439 /* FillDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E502AD81600003EE439 /* FillDataViewController.swift */; };
+		3A6D6E532AD817B4003EE439 /* FillDataStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E522AD817B4003EE439 /* FillDataStep.swift */; };
+		3A6D6E552AD81C8C003EE439 /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E542AD81C8C003EE439 /* AddressData.swift */; };
+		3A6D6E572AD84714003EE439 /* AddressDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E562AD84714003EE439 /* AddressDataCell.swift */; };
+		3A6D6E5B2AD95427003EE439 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E5A2AD95427003EE439 /* SettingsManager.swift */; };
+		3A6D6E5D2AD9663D003EE439 /* UIViewController+Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E5C2AD9663D003EE439 /* UIViewController+Photos.swift */; };
+		3A6D6E5F2AD9667C003EE439 /* UIViewController+BlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E5E2AD9667C003EE439 /* UIViewController+BlurLoader.swift */; };
+		3A6D6E642AD9684B003EE439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A6D6E662AD9684B003EE439 /* InfoPlist.strings */; };
+		3A6D6E692AD968D7003EE439 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E682AD968D7003EE439 /* RoundImageView.swift */; };
+		3A6D6E6D2AD97937003EE439 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E6C2AD97937003EE439 /* SelectionViewController.swift */; };
+		3A6D6E6F2AD97B8B003EE439 /* SelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E6E2AD97B8B003EE439 /* SelectionType.swift */; };
+		3A6D6E712AD97B95003EE439 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E702AD97B95003EE439 /* City.swift */; };
+		3A6D6E732AD97B99003EE439 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E722AD97B99003EE439 /* Country.swift */; };
+		3A6D6E752AD98048003EE439 /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E742AD98048003EE439 /* Selectable.swift */; };
+		3A6D6E772AD98527003EE439 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E762AD98527003EE439 /* SelectionCell.swift */; };
+		3A6D6E792AD98B3D003EE439 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E782AD98B3D003EE439 /* UserData.swift */; };
+		3A6D6E8A2AD9A06A003EE439 /* VerificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E892AD9A06A003EE439 /* VerificationType.swift */; };
+		3A6D6E942AD9AF44003EE439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */; };
+		3A6D6E972AD9B026003EE439 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +93,29 @@
 		3A14061E2AD4AC3B00ED8636 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		3A1406202AD4AD5900ED8636 /* UIViewController+TitleLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TitleLogo.swift"; sourceTree = "<group>"; };
 		3A1406252AD54E1100ED8636 /*  SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SuccessViewController.swift"; sourceTree = "<group>"; };
-		3A1406292AD5625100ED8636 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A14062E2AD57EFF00ED8636 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		3A14067F2AD6ACBC00ED8636 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		3A1406822AD6AEF800ED8636 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		3A6D6E502AD81600003EE439 /* FillDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillDataViewController.swift; sourceTree = "<group>"; };
+		3A6D6E522AD817B4003EE439 /* FillDataStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillDataStep.swift; sourceTree = "<group>"; };
+		3A6D6E542AD81C8C003EE439 /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
+		3A6D6E562AD84714003EE439 /* AddressDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDataCell.swift; sourceTree = "<group>"; };
+		3A6D6E5A2AD95427003EE439 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		3A6D6E5C2AD9663D003EE439 /* UIViewController+Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Photos.swift"; sourceTree = "<group>"; };
+		3A6D6E5E2AD9667C003EE439 /* UIViewController+BlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlurLoader.swift"; sourceTree = "<group>"; };
+		3A6D6E652AD9684B003EE439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A6D6E672AD9684F003EE439 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3A6D6E682AD968D7003EE439 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		3A6D6E6C2AD97937003EE439 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		3A6D6E6E2AD97B8B003EE439 /* SelectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionType.swift; sourceTree = "<group>"; };
+		3A6D6E702AD97B95003EE439 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3A6D6E722AD97B99003EE439 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		3A6D6E742AD98048003EE439 /* Selectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
+		3A6D6E762AD98527003EE439 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		3A6D6E782AD98B3D003EE439 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		3A6D6E892AD9A06A003EE439 /* VerificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationType.swift; sourceTree = "<group>"; };
+		3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +153,7 @@
 				3A1405BF2AD4261F00ED8636 /* AppDelegate.swift */,
 				3A1405EF2AD4340100ED8636 /* Coordinator.swift */,
 				3A1406042AD443D200ED8636 /* Presentation */,
+				3A6D6E582AD9540F003EE439 /* Services */,
 				3A1405E92AD4300400ED8636 /* Shared */,
 				3A1405D72AD426A700ED8636 /* Generated */,
 				3A1405D62AD4268D00ED8636 /* Resources */,
@@ -161,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				3A1405E02AD42CE000ED8636 /* Localizable.strings */,
+				3A6D6E662AD9684B003EE439 /* InfoPlist.strings */,
 			);
 			path = LocalizedStrings;
 			sourceTree = "<group>";
@@ -178,6 +221,7 @@
 		3A1405EA2AD4300B00ED8636 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3A6D6E742AD98048003EE439 /* Selectable.swift */,
 				3A1405EB2AD4301900ED8636 /* Applyable.swift */,
 				3A1405ED2AD4302900ED8636 /* ReuseIdentifier.swift */,
 			);
@@ -187,7 +231,7 @@
 		3A1405F32AD435E900ED8636 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				3A1405C32AD4261F00ED8636 /* SplashViewController.swift */,
+				3A6D6E7E2AD99E98003EE439 /* Views */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -195,8 +239,8 @@
 		3A1405F42AD435F100ED8636 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3A1405F52AD435FC00ED8636 /* OnboardingElement.swift */,
-				3A1405F12AD434A200ED8636 /* OnboardingViewController.swift */,
+				3A6D6E7C2AD99E88003EE439 /* Models */,
+				3A6D6E7D2AD99E8E003EE439 /* Views */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -218,7 +262,9 @@
 				3A1406082AD450EA00ED8636 /* FilledButton.swift */,
 				3A14060A2AD4698600ED8636 /* GoogleButton.swift */,
 				3A1406132AD47BBD00ED8636 /* AuthorizationTextField.swift */,
+				3A14067F2AD6ACBC00ED8636 /* PasswordTextField.swift */,
 				3A14061B2AD4973100ED8636 /* CustomStyleSeparator.swift */,
+				3A6D6E682AD968D7003EE439 /* RoundImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +275,8 @@
 				3A1406022AD43E2100ED8636 /* UIViewController+NavigationBar.swift */,
 				3A1406112AD4753800ED8636 /* UIViewController+BackButton.swift */,
 				3A1406202AD4AD5900ED8636 /* UIViewController+TitleLogo.swift */,
+				3A6D6E5C2AD9663D003EE439 /* UIViewController+Photos.swift */,
+				3A6D6E5E2AD9667C003EE439 /* UIViewController+BlurLoader.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +284,7 @@
 		3A1406042AD443D200ED8636 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3A6D6E6A2AD97902003EE439 /* Selection */,
 				3A1405F32AD435E900ED8636 /* Splash */,
 				3A1405F42AD435F100ED8636 /* Onboarding */,
 				3A1406052AD443E800ED8636 /* Authorization */,
@@ -243,7 +292,10 @@
 				3A14061D2AD4AC2B00ED8636 /* Verification */,
 				3A1406272AD54E1500ED8636 /* Success */,
 				3A1406282AD5624800ED8636 /* Login */,
+				3A1406842AD6B82400ED8636 /* ForgotPassword */,
+				3A1406812AD6AEE500ED8636 /* ResetPassword */,
 				3A14062C2AD57EE700ED8636 /* MainTab */,
+				3A6D6E4F2AD80A74003EE439 /* FillData */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -251,7 +303,7 @@
 		3A1406052AD443E800ED8636 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				3A1406062AD4440A00ED8636 /* AuthorizationViewController.swift */,
+				3A6D6E7F2AD99E9D003EE439 /* Views */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -259,7 +311,7 @@
 		3A14060E2AD473EA00ED8636 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				3A14060F2AD473FA00ED8636 /* SignUpViewController.swift */,
+				3A6D6E802AD99EA1003EE439 /* Views */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -267,7 +319,7 @@
 		3A14061D2AD4AC2B00ED8636 /* Verification */ = {
 			isa = PBXGroup;
 			children = (
-				3A14061E2AD4AC3B00ED8636 /* VerificationViewController.swift */,
+				3A6D6E812AD99EA7003EE439 /* Views */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -275,7 +327,8 @@
 		3A1406272AD54E1500ED8636 /* Success */ = {
 			isa = PBXGroup;
 			children = (
-				3A1406252AD54E1100ED8636 /*  SuccessViewController.swift */,
+				3A6D6E8B2AD9A070003EE439 /* Models */,
+				3A6D6E822AD99EAB003EE439 /* Views */,
 			);
 			path = Success;
 			sourceTree = "<group>";
@@ -283,7 +336,7 @@
 		3A1406282AD5624800ED8636 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3A1406292AD5625100ED8636 /* LoginViewController.swift */,
+				3A6D6E832AD99EB0003EE439 /* Views */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -291,9 +344,185 @@
 		3A14062C2AD57EE700ED8636 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				3A14062E2AD57EFF00ED8636 /* MainTabViewController.swift */,
+				3A6D6E862AD99EBF003EE439 /* Veiws */,
 			);
 			path = MainTab;
+			sourceTree = "<group>";
+		};
+		3A1406812AD6AEE500ED8636 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E852AD99EB9003EE439 /* Views */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		3A1406842AD6B82400ED8636 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E952AD9B01B003EE439 /* Views */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		3A6D6E4F2AD80A74003EE439 /* FillData */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E882AD99ED9003EE439 /* Models */,
+				3A6D6E872AD99ED3003EE439 /* Views */,
+			);
+			path = FillData;
+			sourceTree = "<group>";
+		};
+		3A6D6E582AD9540F003EE439 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E5A2AD95427003EE439 /* SettingsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3A6D6E6A2AD97902003EE439 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E7B2AD99E73003EE439 /* Models */,
+				3A6D6E7A2AD99E69003EE439 /* Views */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		3A6D6E7A2AD99E69003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E6C2AD97937003EE439 /* SelectionViewController.swift */,
+				3A6D6E762AD98527003EE439 /* SelectionCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E7B2AD99E73003EE439 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E6E2AD97B8B003EE439 /* SelectionType.swift */,
+				3A6D6E702AD97B95003EE439 /* City.swift */,
+				3A6D6E722AD97B99003EE439 /* Country.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A6D6E7C2AD99E88003EE439 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A1405F52AD435FC00ED8636 /* OnboardingElement.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A6D6E7D2AD99E8E003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1405F12AD434A200ED8636 /* OnboardingViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E7E2AD99E98003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1405C32AD4261F00ED8636 /* SplashViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E7F2AD99E9D003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1406062AD4440A00ED8636 /* AuthorizationViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E802AD99EA1003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A14060F2AD473FA00ED8636 /* SignUpViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E812AD99EA7003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A14061E2AD4AC3B00ED8636 /* VerificationViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E822AD99EAB003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1406252AD54E1100ED8636 /*  SuccessViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E832AD99EB0003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E852AD99EB9003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1406822AD6AEF800ED8636 /* ResetPasswordViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E862AD99EBF003EE439 /* Veiws */ = {
+			isa = PBXGroup;
+			children = (
+				3A14062E2AD57EFF00ED8636 /* MainTabViewController.swift */,
+			);
+			path = Veiws;
+			sourceTree = "<group>";
+		};
+		3A6D6E872AD99ED3003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E502AD81600003EE439 /* FillDataViewController.swift */,
+				3A6D6E562AD84714003EE439 /* AddressDataCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A6D6E882AD99ED9003EE439 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E522AD817B4003EE439 /* FillDataStep.swift */,
+				3A6D6E542AD81C8C003EE439 /* AddressData.swift */,
+				3A6D6E782AD98B3D003EE439 /* UserData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A6D6E8B2AD9A070003EE439 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E892AD9A06A003EE439 /* VerificationType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A6D6E952AD9B01B003EE439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +532,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A1405D02AD4262000ED8636 /* Build configuration list for PBXNativeTarget "AMSI" */;
 			buildPhases = (
-				3A1405DC2AD4280C00ED8636 /* SwiftLint */,
 				3A1405DD2AD4283300ED8636 /* SwiftGen */,
 				3A1405B82AD4261F00ED8636 /* Sources */,
 				3A1405B92AD4261F00ED8636 /* Frameworks */,
@@ -366,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A14060D2AD46CF300ED8636 /* NotoSansJP-Medium.ttf in Resources */,
+				3A6D6E642AD9684B003EE439 /* InfoPlist.strings in Resources */,
 				3A1405FA2AD43B8700ED8636 /* NotoSansJP-Regular.ttf in Resources */,
 				3A1405CC2AD4262000ED8636 /* LaunchScreen.storyboard in Resources */,
 				3A1405FB2AD43B8700ED8636 /* NotoSansJP-Bold.ttf in Resources */,
@@ -377,25 +606,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A1405DC2AD4280C00ED8636 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 		3A1405DD2AD4283300ED8636 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -422,16 +632,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6D6E552AD81C8C003EE439 /* AddressData.swift in Sources */,
 				3A1406212AD4AD5900ED8636 /* UIViewController+TitleLogo.swift in Sources */,
 				3A14061C2AD4973100ED8636 /* CustomStyleSeparator.swift in Sources */,
 				3A1405C42AD4261F00ED8636 /* SplashViewController.swift in Sources */,
-				3A14062A2AD5625100ED8636 /* LoginViewController.swift in Sources */,
+				3A6D6E732AD97B99003EE439 /* Country.swift in Sources */,
+				3A6D6E5D2AD9663D003EE439 /* UIViewController+Photos.swift in Sources */,
 				3A14061F2AD4AC3B00ED8636 /* VerificationViewController.swift in Sources */,
+				3A6D6E512AD81600003EE439 /* FillDataViewController.swift in Sources */,
+				3A6D6E5F2AD9667C003EE439 /* UIViewController+BlurLoader.swift in Sources */,
+				3A1406802AD6ACBC00ED8636 /* PasswordTextField.swift in Sources */,
 				3A1406142AD47BBD00ED8636 /* AuthorizationTextField.swift in Sources */,
+				3A6D6E532AD817B4003EE439 /* FillDataStep.swift in Sources */,
 				3A1405EE2AD4302900ED8636 /* ReuseIdentifier.swift in Sources */,
+				3A6D6E6D2AD97937003EE439 /* SelectionViewController.swift in Sources */,
+				3A6D6E752AD98048003EE439 /* Selectable.swift in Sources */,
+				3A6D6E972AD9B026003EE439 /* ForgotPasswordViewController.swift in Sources */,
 				3A1406002AD43C5A00ED8636 /* CustomStyleLabel.swift in Sources */,
+				3A1406832AD6AEF800ED8636 /* ResetPasswordViewController.swift in Sources */,
 				3A1406092AD450EA00ED8636 /* FilledButton.swift in Sources */,
 				3A14060B2AD4698600ED8636 /* GoogleButton.swift in Sources */,
+				3A6D6E8A2AD9A06A003EE439 /* VerificationType.swift in Sources */,
 				3A1405E42AD42DA900ED8636 /* LocalizedStrings.swift in Sources */,
 				3A1406032AD43E2100ED8636 /* UIViewController+NavigationBar.swift in Sources */,
 				3A1406122AD4753800ED8636 /* UIViewController+BackButton.swift in Sources */,
@@ -440,11 +661,19 @@
 				3A1405E52AD42DA900ED8636 /* Assets.swift in Sources */,
 				3A1406102AD473FA00ED8636 /* SignUpViewController.swift in Sources */,
 				3A14062F2AD57EFF00ED8636 /* MainTabViewController.swift in Sources */,
+				3A6D6E692AD968D7003EE439 /* RoundImageView.swift in Sources */,
 				3A1405C02AD4261F00ED8636 /* AppDelegate.swift in Sources */,
+				3A6D6E792AD98B3D003EE439 /* UserData.swift in Sources */,
+				3A6D6E6F2AD97B8B003EE439 /* SelectionType.swift in Sources */,
 				3A1405FD2AD43C4100ED8636 /* Fonts.swift in Sources */,
+				3A6D6E942AD9AF44003EE439 /* LoginViewController.swift in Sources */,
 				3A1405F62AD435FC00ED8636 /* OnboardingElement.swift in Sources */,
 				3A1406262AD54E1100ED8636 /*  SuccessViewController.swift in Sources */,
+				3A6D6E5B2AD95427003EE439 /* SettingsManager.swift in Sources */,
+				3A6D6E572AD84714003EE439 /* AddressDataCell.swift in Sources */,
 				3A1405EC2AD4301900ED8636 /* Applyable.swift in Sources */,
+				3A6D6E712AD97B95003EE439 /* City.swift in Sources */,
+				3A6D6E772AD98527003EE439 /* SelectionCell.swift in Sources */,
 				3A1405F02AD4340100ED8636 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +696,15 @@
 				3A1405E12AD42CF300ED8636 /* en-GB */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3A6D6E662AD9684B003EE439 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A6D6E652AD9684B003EE439 /* en */,
+				3A6D6E672AD9684F003EE439 /* en-GB */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

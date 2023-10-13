@@ -35,12 +35,7 @@ final class SplashViewController: UIViewController {
 
     private func navigateToOnboardingAfterDelay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if true {
-                self.coordinator?.setupMainNavigationFlow()
-                self.coordinator?.navigateToOnboarding()
-            } else {
-                self.coordinator?.setupMainNavigationFlow()
-            }
+            self.coordinator?.setupMainNavigationFlow()
         }
     }
 

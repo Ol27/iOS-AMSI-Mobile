@@ -37,7 +37,7 @@ enum OnboardingElement {
     var titleText: String {
         switch self {
         case .first:
-            return LocalizedStrings.firtstOnboardingTitle
+            return LocalizedStrings.firstOnboardingTitle
         case .second:
             return LocalizedStrings.secondOnboardingTitle
         case .third:
@@ -48,7 +48,7 @@ enum OnboardingElement {
     var text: String {
         switch self {
         case .first:
-            return LocalizedStrings.firtstOnboardingText
+            return LocalizedStrings.firstOnboardingText
         case .second:
             return LocalizedStrings.secondOnboardingText
         case .third:
