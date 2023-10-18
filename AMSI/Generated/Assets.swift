@@ -36,6 +36,10 @@ internal enum Assets {
       internal static let textFieldBackground = ColorAsset(name: "TextFieldBackground")
     }
     internal static let splashScreen = ColorAsset(name: "SplashScreen")
+    internal enum TabBar {
+      internal static let searchButtonShadow = ColorAsset(name: "SearchButtonShadow")
+      internal static let tabBarShadow = ColorAsset(name: "TabBarShadow")
+    }
   }
   internal enum Images {
     internal enum Authorization {
@@ -62,6 +66,20 @@ internal enum Assets {
     }
     internal enum Login {
       internal static let loginImage = ImageAsset(name: "LoginImage")
+    }
+    internal enum MainTabBar {
+      internal static let eventsSelected = ImageAsset(name: "EventsSelected")
+      internal static let eventsUnselected = ImageAsset(name: "EventsUnselected")
+      internal static let homeSelected = ImageAsset(name: "HomeSelected")
+      internal static let homeUnselected = ImageAsset(name: "HomeUnselected")
+      internal static let jobsSelected = ImageAsset(name: "JobsSelected")
+      internal static let jobsUnselected = ImageAsset(name: "JobsUnselected")
+      internal static let profileSelected = ImageAsset(name: "ProfileSelected")
+      internal static let profileUnselected = ImageAsset(name: "ProfileUnselected")
+      internal static let searchSelected = ImageAsset(name: "SearchSelected")
+      internal static let searchUnselected = ImageAsset(name: "SearchUnselected")
+      internal static let selectionDot = ImageAsset(name: "SelectionDot")
+      internal static let tabBarBackground = ImageAsset(name: "TabBarBackground")
     }
     internal enum Onboarding {
       internal static let onboardingBackground = ImageAsset(name: "OnboardingBackground")
