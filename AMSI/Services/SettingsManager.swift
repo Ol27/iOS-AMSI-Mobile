@@ -21,6 +21,14 @@ final class SettingsManager {
         return defaults.bool(forKey: key)
     }
 
+    private func set(_ value: String, for key: String) {
+        defaults.set(value, forKey: key)
+    }
+
+    private func getString(for key: String) -> String? {
+        return defaults.string(forKey: key)
+    }
+
     var didShowOnboarding: Bool {
         get { getBool(for: #function) }
         set { set(newValue, for: #function) }

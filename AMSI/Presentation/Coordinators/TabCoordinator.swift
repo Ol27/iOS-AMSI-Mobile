@@ -1,5 +1,5 @@
 //
-//  MainTabBarCoordinator.swift
+//  TabCoordinator.swift
 //  AMSI
 //
 //  Created by Anton Petrov on 17.10.2023.
@@ -20,7 +20,7 @@ final class TabCoordinator: TabCoordinatorProtocol {
 
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.tabBarController = MainTabBarController()
+        tabBarController = MainTabBarController()
     }
 
     func start() {

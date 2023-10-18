@@ -47,7 +47,7 @@ final class AppCoordinator: AppCoordinatorProtocol {
 
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
-        childCoordinators = childCoordinators.filter({ $0.type != childCoordinator.type })
+        childCoordinators = childCoordinators.filter { $0.type != childCoordinator.type }
         switch childCoordinator.type {
         case .mainTabs:
             navigationController.viewControllers.removeAll()

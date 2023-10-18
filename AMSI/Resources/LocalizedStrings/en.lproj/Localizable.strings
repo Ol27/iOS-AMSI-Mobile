@@ -90,3 +90,11 @@
 "SaveButton" = "Save";
 "PickCountry" = "Pick a country";
 "PickCity" = "Pick a city";
+
+// MARK: - Home screen
+
+"HomeScreenInfo" = "Find events and job near you";
+"UpcomingEventsTitle" = "Upcoming events";
+"SeeAllButton" = "See All";
+"OpenButton" = "Open";
+"JobsForYouTitle" = "Jobs for you";

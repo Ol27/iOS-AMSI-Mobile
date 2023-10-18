@@ -19,7 +19,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController: UINavigationController = .init()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        appCoordinator = AppCoordinator.init(navigationController: navigationController)
+        appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.start()
         setupAppearances()
         return true

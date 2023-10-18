@@ -7,4 +7,4 @@
 
 import UIKit
 
-final class ProfileViewController: StubViewController { }
+final class ProfileViewController: StubViewController {}

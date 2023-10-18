@@ -5,8 +5,8 @@
 //  Created by Anton Petrov on 17.10.2023.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class StubViewController: UIViewController {
     private let centeredLabel: UILabel = {
@@ -18,7 +18,7 @@ class StubViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        view.backgroundColor = .lightGray
         centeredLabel.text = String(describing: Self.self)
         setupUI()
     }

@@ -77,7 +77,7 @@ final class MainTabBarController: UITabBarController {
     }
 
     // MARK: - Actions
-    
+
     @objc private func didTapHomeTabButton() {
         selectedTab = .home
     }
@@ -158,7 +158,7 @@ final class MainTabBarController: UITabBarController {
             make.bottom.equalToSuperview().offset(-4)
             make.left.right.equalToSuperview().inset(28)
         }
-        
+
         tabContainerStackView.addArrangedSubview(homeTabImageView)
         tabContainerStackView.addArrangedSubview(eventsTabImageView)
 

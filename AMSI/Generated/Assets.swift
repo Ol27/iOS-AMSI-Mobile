@@ -26,13 +26,22 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Assets {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal enum Colors {
+    internal enum Home {
+      internal static let hourlyRateTag = ColorAsset(name: "hourlyRateTag")
+      internal static let infoTag = ColorAsset(name: "infoTag")
+      internal static let typeTag = ColorAsset(name: "typeTag")
+    }
     internal enum Shared {
+      internal static let actionButtonBackground = ColorAsset(name: "ActionButtonBackground")
+      internal static let border = ColorAsset(name: "Border")
+      internal static let cellBackground = ColorAsset(name: "CellBackground")
       internal static let filledButtonText = ColorAsset(name: "FilledButtonText")
       internal static let mainAccent = ColorAsset(name: "MainAccent")
       internal static let mainText = ColorAsset(name: "MainText")
       internal static let screenBackground = ColorAsset(name: "ScreenBackground")
       internal static let secondaryText = ColorAsset(name: "SecondaryText")
       internal static let separator = ColorAsset(name: "Separator")
+      internal static let shadowColor = ColorAsset(name: "ShadowColor")
       internal static let textFieldBackground = ColorAsset(name: "TextFieldBackground")
     }
     internal static let splashScreen = ColorAsset(name: "SplashScreen")
@@ -62,7 +71,8 @@ internal enum Assets {
       internal static let forgotPassword = ImageAsset(name: "ForgotPassword")
     }
     internal enum Home {
-      internal static let homeScreen = ImageAsset(name: "HomeScreen")
+      internal static let locationIcon = ImageAsset(name: "LocationIcon")
+      internal static let timeIcon = ImageAsset(name: "TimeIcon")
     }
     internal enum Login {
       internal static let loginImage = ImageAsset(name: "LoginImage")
@@ -81,6 +91,10 @@ internal enum Assets {
       internal static let selectionDot = ImageAsset(name: "SelectionDot")
       internal static let tabBarBackground = ImageAsset(name: "TabBarBackground")
     }
+    internal enum Mocks {
+      internal static let eventMock = ImageAsset(name: "EventMock")
+      internal static let jobMock = ImageAsset(name: "JobMock")
+    }
     internal enum Onboarding {
       internal static let onboardingBackground = ImageAsset(name: "OnboardingBackground")
       internal static let onboardingButtonFirst = ImageAsset(name: "OnboardingButtonFirst")
@@ -93,6 +107,7 @@ internal enum Assets {
     internal enum Shared {
       internal static let backButton = ImageAsset(name: "BackButton")
       internal static let orSeparator = ImageAsset(name: "OrSeparator")
+      internal static let separatorDot = ImageAsset(name: "SeparatorDot")
       internal static let pickArrow = ImageAsset(name: "pickArrow")
       internal static let selectedArrow = ImageAsset(name: "selectedArrow")
     }

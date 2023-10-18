@@ -7,4 +7,4 @@
 
 import UIKit
 
-final class JobsViewController: StubViewController { }
+final class JobsViewController: StubViewController {}

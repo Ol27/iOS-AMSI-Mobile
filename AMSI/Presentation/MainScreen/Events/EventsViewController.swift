@@ -7,4 +7,4 @@
 
 import UIKit
 
-final class EventsViewController: StubViewController { }
+final class EventsViewController: StubViewController {}

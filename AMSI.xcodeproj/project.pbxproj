@@ -40,7 +40,9 @@
 		3A14062F2AD57EFF00ED8636 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14062E2AD57EFF00ED8636 /* MainTabBarController.swift */; };
 		3A1406802AD6ACBC00ED8636 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14067F2AD6ACBC00ED8636 /* PasswordTextField.swift */; };
 		3A1406832AD6AEF800ED8636 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406822AD6AEF800ED8636 /* ResetPasswordViewController.swift */; };
-		3A4CB85A2ADED0B900F4A1BF /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CB8592ADED0B900F4A1BF /* MainTabBarCoordinator.swift */; };
+		3A41C6232ADFE7E1007BCDD2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41C6222ADFE7E1007BCDD2 /* Event.swift */; };
+		3A41C6252ADFE7E6007BCDD2 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41C6242ADFE7E6007BCDD2 /* Job.swift */; };
+		3A4CB85A2ADED0B900F4A1BF /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CB8592ADED0B900F4A1BF /* TabCoordinator.swift */; };
 		3A4CB85C2ADED40300F4A1BF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CB85B2ADED40300F4A1BF /* Coordinator.swift */; };
 		3A4CB8612ADF11A500F4A1BF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CB8602ADF11A500F4A1BF /* AppCoordinator.swift */; };
 		3A4CB8632ADF195400F4A1BF /* StubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CB8622ADF195400F4A1BF /* StubViewController.swift */; };
@@ -69,6 +71,11 @@
 		3AB0B34D2ADD613100F79316 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B34C2ADD613100F79316 /* SearchViewController.swift */; };
 		3AB0B3502ADD614A00F79316 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B34F2ADD614A00F79316 /* JobsViewController.swift */; };
 		3AB0B3532ADD616000F79316 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3522ADD616000F79316 /* ProfileViewController.swift */; };
+		3AD698EA2AE01F3900657B16 /* HomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698E92AE01F3900657B16 /* HomeViewHeader.swift */; };
+		3AD698EC2AE0230900657B16 /* HomeEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698EB2AE0230900657B16 /* HomeEventCell.swift */; };
+		3AD698EE2AE0280900657B16 /* SmallActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698ED2AE0280900657B16 /* SmallActionButton.swift */; };
+		3AD698F22AE03EFB00657B16 /* HomeJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698F12AE03EFB00657B16 /* HomeJobCell.swift */; };
+		3AD698F42AE0479500657B16 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698F32AE0479500657B16 /* TagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,7 +113,9 @@
 		3A14062E2AD57EFF00ED8636 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3A14067F2AD6ACBC00ED8636 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		3A1406822AD6AEF800ED8636 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		3A4CB8592ADED0B900F4A1BF /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		3A41C6222ADFE7E1007BCDD2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3A41C6242ADFE7E6007BCDD2 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		3A4CB8592ADED0B900F4A1BF /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		3A4CB85B2ADED40300F4A1BF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3A4CB8602ADF11A500F4A1BF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3A4CB8622ADF195400F4A1BF /* StubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +145,11 @@
 		3AB0B34C2ADD613100F79316 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3AB0B34F2ADD614A00F79316 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		3AB0B3522ADD616000F79316 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3AD698E92AE01F3900657B16 /* HomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHeader.swift; sourceTree = "<group>"; };
+		3AD698EB2AE0230900657B16 /* HomeEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventCell.swift; sourceTree = "<group>"; };
+		3AD698ED2AE0280900657B16 /* SmallActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallActionButton.swift; sourceTree = "<group>"; };
+		3AD698F12AE03EFB00657B16 /* HomeJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeJobCell.swift; sourceTree = "<group>"; };
+		3AD698F32AE0479500657B16 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +298,8 @@
 				3A14061B2AD4973100ED8636 /* CustomStyleSeparator.swift */,
 				3A6D6E682AD968D7003EE439 /* RoundImageView.swift */,
 				3A4CB8622ADF195400F4A1BF /* StubViewController.swift */,
+				3AD698ED2AE0280900657B16 /* SmallActionButton.swift */,
+				3AD698F32AE0479500657B16 /* TagView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				3A14062C2AD57EE700ED8636 /* MainTab */,
+				3A6D6E4F2AD80A74003EE439 /* FillData */,
 				3AB0B3452ADD60C100F79316 /* Home */,
 				3AB0B3482ADD610400F79316 /* Events */,
 				3AB0B34B2ADD612600F79316 /* Search */,
@@ -403,7 +420,6 @@
 				3A1406282AD5624800ED8636 /* Login */,
 				3A1406842AD6B82400ED8636 /* ForgotPassword */,
 				3A1406812AD6AEE500ED8636 /* ResetPassword */,
-				3A6D6E4F2AD80A74003EE439 /* FillData */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -422,7 +438,7 @@
 				3A4CB85B2ADED40300F4A1BF /* Coordinator.swift */,
 				3A4CB8602ADF11A500F4A1BF /* AppCoordinator.swift */,
 				3A1405EF2AD4340100ED8636 /* AuthCoordinator.swift */,
-				3A4CB8592ADED0B900F4A1BF /* MainTabBarCoordinator.swift */,
+				3A4CB8592ADED0B900F4A1BF /* TabCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -598,7 +614,8 @@
 		3AB0B3452ADD60C100F79316 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3AB0B3462ADD60D500F79316 /* HomeViewController.swift */,
+				3AD698F52AE04B9C00657B16 /* Models */,
+				3AD698F62AE04BA900657B16 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -633,6 +650,34 @@
 				3AB0B3522ADD616000F79316 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		3AD698F52AE04B9C00657B16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A41C6222ADFE7E1007BCDD2 /* Event.swift */,
+				3A41C6242ADFE7E6007BCDD2 /* Job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3AD698F62AE04BA900657B16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0B3462ADD60D500F79316 /* HomeViewController.swift */,
+				3AD698E92AE01F3900657B16 /* HomeViewHeader.swift */,
+				3AD698F72AE04BAF00657B16 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3AD698F72AE04BAF00657B16 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3AD698EB2AE0230900657B16 /* HomeEventCell.swift */,
+				3AD698F12AE03EFB00657B16 /* HomeJobCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -749,12 +794,15 @@
 				3A6D6E732AD97B99003EE439 /* Country.swift in Sources */,
 				3AB0B3472ADD60D500F79316 /* HomeViewController.swift in Sources */,
 				3A6D6E5D2AD9663D003EE439 /* UIViewController+Photos.swift in Sources */,
-				3A4CB85A2ADED0B900F4A1BF /* MainTabBarCoordinator.swift in Sources */,
+				3A4CB85A2ADED0B900F4A1BF /* TabCoordinator.swift in Sources */,
 				3A14061F2AD4AC3B00ED8636 /* VerificationViewController.swift in Sources */,
 				3AB0B34D2ADD613100F79316 /* SearchViewController.swift in Sources */,
+				3A41C6232ADFE7E1007BCDD2 /* Event.swift in Sources */,
+				3AD698F42AE0479500657B16 /* TagView.swift in Sources */,
 				3A6D6E512AD81600003EE439 /* FillDataViewController.swift in Sources */,
 				3A6D6E5F2AD9667C003EE439 /* UIViewController+BlurLoader.swift in Sources */,
 				3A1406802AD6ACBC00ED8636 /* PasswordTextField.swift in Sources */,
+				3AD698EC2AE0230900657B16 /* HomeEventCell.swift in Sources */,
 				3A1406142AD47BBD00ED8636 /* AuthorizationTextField.swift in Sources */,
 				3A6D6E532AD817B4003EE439 /* FillDataStep.swift in Sources */,
 				3A1405EE2AD4302900ED8636 /* ReuseIdentifier.swift in Sources */,
@@ -764,12 +812,15 @@
 				3A1406002AD43C5A00ED8636 /* CustomStyleLabel.swift in Sources */,
 				3A1406832AD6AEF800ED8636 /* ResetPasswordViewController.swift in Sources */,
 				3A1406092AD450EA00ED8636 /* FilledButton.swift in Sources */,
+				3AD698F22AE03EFB00657B16 /* HomeJobCell.swift in Sources */,
 				3A14060B2AD4698600ED8636 /* GoogleButton.swift in Sources */,
 				3A6D6E8A2AD9A06A003EE439 /* VerificationType.swift in Sources */,
 				3A1405E42AD42DA900ED8636 /* LocalizedStrings.swift in Sources */,
 				3A1406032AD43E2100ED8636 /* UIViewController+NavigationBar.swift in Sources */,
 				3A1406122AD4753800ED8636 /* UIViewController+BackButton.swift in Sources */,
+				3AD698EA2AE01F3900657B16 /* HomeViewHeader.swift in Sources */,
 				3A1406072AD4440A00ED8636 /* AuthorizationViewController.swift in Sources */,
+				3A41C6252ADFE7E6007BCDD2 /* Job.swift in Sources */,
 				3A4CB8612ADF11A500F4A1BF /* AppCoordinator.swift in Sources */,
 				3A1405F22AD434A200ED8636 /* OnboardingViewController.swift in Sources */,
 				3A1405E52AD42DA900ED8636 /* Assets.swift in Sources */,
@@ -793,6 +844,7 @@
 				3A1405EC2AD4301900ED8636 /* Applyable.swift in Sources */,
 				3A6D6E712AD97B95003EE439 /* City.swift in Sources */,
 				3A4CB8632ADF195400F4A1BF /* StubViewController.swift in Sources */,
+				3AD698EE2AE0280900657B16 /* SmallActionButton.swift in Sources */,
 				3A6D6E772AD98527003EE439 /* SelectionCell.swift in Sources */,
 				3A1405F02AD4340100ED8636 /* AuthCoordinator.swift in Sources */,
 			);

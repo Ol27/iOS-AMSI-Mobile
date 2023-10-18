@@ -7,4 +7,4 @@
 
 import UIKit
 
-final class SearchViewController: StubViewController { }
+final class SearchViewController: StubViewController {}

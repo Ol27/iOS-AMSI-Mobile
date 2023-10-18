@@ -55,10 +55,16 @@ internal enum LocalizedStrings {
   internal static let forgotPasswordText = LocalizedStrings.tr("Localizable", "ForgotPasswordText", fallback: "Please enter the email address associated with your account.")
   /// Your full name
   internal static let fullName = LocalizedStrings.tr("Localizable", "FullName", fallback: "Your full name")
+  /// Find events and job near you
+  internal static let homeScreenInfo = LocalizedStrings.tr("Localizable", "HomeScreenInfo", fallback: "Find events and job near you")
+  /// Jobs for you
+  internal static let jobsForYouTitle = LocalizedStrings.tr("Localizable", "JobsForYouTitle", fallback: "Jobs for you")
   /// Login
   internal static let loginButton = LocalizedStrings.tr("Localizable", "LoginButton", fallback: "Login")
   /// Login
   internal static let loginTitle = LocalizedStrings.tr("Localizable", "LoginTitle", fallback: "Login")
+  /// Open
+  internal static let openButton = LocalizedStrings.tr("Localizable", "OpenButton", fallback: "Open")
   /// Or
   internal static let orSeparator = LocalizedStrings.tr("Localizable", "OrSeparator", fallback: "Or")
   /// Password
@@ -88,6 +94,8 @@ internal enum LocalizedStrings {
   internal static let secondOnboardingText = LocalizedStrings.tr("Localizable", "SecondOnboardingText", fallback: "Search and find your dream job \neasily and quickly")
   /// Find Your Dream Job
   internal static let secondOnboardingTitle = LocalizedStrings.tr("Localizable", "SecondOnboardingTitle", fallback: "Find Your Dream Job")
+  /// See All
+  internal static let seeAllButton = LocalizedStrings.tr("Localizable", "SeeAllButton", fallback: "See All")
   /// Send me Email
   internal static let sendMeEmailButton = LocalizedStrings.tr("Localizable", "SendMeEmailButton", fallback: "Send me Email")
   /// We have to send the verification to your email
@@ -105,6 +113,8 @@ internal enum LocalizedStrings {
   internal static let thirdOnboardingText = LocalizedStrings.tr("Localizable", "ThirdOnboardingText", fallback: "Get your dream job & start working \nin a new company")
   /// Get your dream job
   internal static let thirdOnboardingTitle = LocalizedStrings.tr("Localizable", "ThirdOnboardingTitle", fallback: "Get your dream job")
+  /// Upcoming events
+  internal static let upcomingEventsTitle = LocalizedStrings.tr("Localizable", "UpcomingEventsTitle", fallback: "Upcoming events")
   /// Upload photo
   internal static let uploadPhotoButton = LocalizedStrings.tr("Localizable", "UploadPhotoButton", fallback: "Upload photo")
   /// Verification Code

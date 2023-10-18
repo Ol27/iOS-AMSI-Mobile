@@ -9,6 +9,10 @@ import Photos
 import SnapKit
 import UIKit
 
+protocol FillDataDelegate: AnyObject {
+    func didFillDataFor(user: UserData)
+}
+
 final class FillDataViewController: UIViewController {
     // MARK: - UI Elements
 
@@ -77,6 +81,7 @@ final class FillDataViewController: UIViewController {
     private var userData = UserData()
     private var step = FillDataStep.addPhoto
     weak var coordinator: TabCoordinatorProtocol?
+    weak var delegate: FillDataDelegate?
 
     // MARK: - Lifecycle
 
@@ -111,7 +116,9 @@ final class FillDataViewController: UIViewController {
         case .contactInfo:
             animateToStep(.address)
         case .address:
-            dismiss(animated: true) {
+            delegate?.didFillDataFor(user: userData)
+            dismiss(animated: true) { [weak self] in
+                guard let self, let city = self.userData.city, let country = self.userData.country else { return }
                 SettingsManager.shared.didFilledData = true
             }
         }
