@@ -13,7 +13,7 @@ protocol AppCoordinatorProtocol: Coordinator {
 }
 
 final class AppCoordinator: AppCoordinatorProtocol {
-    weak var finishDelegate: CoordinatorFinishDelegate? = nil
+    weak var finishDelegate: CoordinatorFinishDelegate?
 
     var navigationController: UINavigationController
 

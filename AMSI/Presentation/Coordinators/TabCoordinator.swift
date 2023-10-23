@@ -28,7 +28,7 @@ final class TabCoordinator: TabCoordinatorProtocol {
         tabBarController.setViewControllers(controllers, animated: true)
         tabBarController.selectedIndex = 0
         navigationController.pushViewController(tabBarController, animated: true)
-        guard !SettingsManager.shared.didFilledData else { return }
+//        guard !SettingsManager.shared.didFilledData else { return }
         let fillDataVC = FillDataViewController()
         fillDataVC.coordinator = self
         let fillDataNavigationVC = UINavigationController(rootViewController: fillDataVC)

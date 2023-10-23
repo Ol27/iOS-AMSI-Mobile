@@ -1,4 +1,0 @@
---disable unusedArguments
---disable wrapMultilineStatementBraces
---disable trailingCommas
---exclude Pods

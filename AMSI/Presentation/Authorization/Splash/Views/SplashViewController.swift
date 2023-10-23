@@ -27,6 +27,16 @@ final class SplashViewController: UIViewController {
         navigateToAuthScreen()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+
     private func startFloatingAnimation() {
         UIView.animate(withDuration: 1.5, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.logoImageView.transform = CGAffineTransform(translationX: 0, y: -20)

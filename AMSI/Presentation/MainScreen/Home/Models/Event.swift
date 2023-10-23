@@ -16,7 +16,7 @@ struct Event {
     let image: UIImage
 }
 
-let MockEvents: [Event] = Array(repeating: .init(name: "Some event name special big name event",
+let mockEvents: [Event] = Array(repeating: .init(name: "Some event name special big name event",
                                                  city: "California",
                                                  time: "10:00 PM",
                                                  dayDate: "29",

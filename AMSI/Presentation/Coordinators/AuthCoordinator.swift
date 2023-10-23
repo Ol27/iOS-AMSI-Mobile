@@ -47,7 +47,7 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     }
 
     func navigateToOnboarding() {
-        guard !SettingsManager.shared.didShowOnboarding else { return }
+//        guard !SettingsManager.shared.didShowOnboarding else { return }
         let onboardingVC = OnboardingViewController()
         onboardingVC.coordinator = self
         onboardingVC.modalPresentationStyle = .overFullScreen
@@ -57,6 +57,7 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     func navigateToLogin() {
         let loginVC = LoginViewController()
         loginVC.coordinator = self
+        navigationController.setNavigationBarHidden(false, animated: false)
         navigationController.pushViewController(loginVC, animated: true)
     }
 
@@ -69,6 +70,7 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     func navigateToSignUp() {
         let signUpVC = SignUpViewController()
         signUpVC.coordinator = self
+        navigationController.setNavigationBarHidden(false, animated: false)
         navigationController.pushViewController(signUpVC, animated: true)
     }
 

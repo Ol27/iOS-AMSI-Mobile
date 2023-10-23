@@ -51,13 +51,13 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        MockJobs.count
+        mockJobs.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeJobCell.reuseIdentifier,
                                                        for: indexPath) as? HomeJobCell else { return UITableViewCell() }
-        cell.configure(withJob: MockJobs[indexPath.row])
+        cell.configure(withJob: mockJobs[indexPath.row])
         return cell
     }
 }

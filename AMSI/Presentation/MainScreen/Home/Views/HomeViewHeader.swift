@@ -109,13 +109,13 @@ final class HomeViewHeader: UIView {
 
 extension HomeViewHeader: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        MockEvents.count
+        mockEvents.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeEventCell.reuseIdentifier,
                                                             for: indexPath) as? HomeEventCell else { return UICollectionViewCell() }
-        cell.configure(withEvent: MockEvents[indexPath.item])
+        cell.configure(withEvent: mockEvents[indexPath.item])
         return cell
     }
 }

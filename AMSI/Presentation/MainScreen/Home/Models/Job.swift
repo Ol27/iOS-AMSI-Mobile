@@ -18,7 +18,7 @@ struct Job {
     let image: UIImage
 }
 
-let MockJobs: [Job] = Array(repeating: .init(name: "UI Researcher",
+let mockJobs: [Job] = Array(repeating: .init(name: "UI Researcher",
                                              company: "Pinterest",
                                              hourlyRate: "£‎45 (hourly)",
                                              type: "Full time",
