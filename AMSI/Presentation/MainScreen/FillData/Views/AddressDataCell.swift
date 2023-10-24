@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddressDataCellDelegate: AnyObject {
+    func didChange(text: String?, forDataType: AddressData)
+}
+
 final class AddressDataCell: UITableViewCell, ReuseIdentifier {
     // MARK: - UI Elements
 
@@ -41,6 +45,8 @@ final class AddressDataCell: UITableViewCell, ReuseIdentifier {
     private let iconImageViewSideSize: CGFloat = 24
     private lazy var cellInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     private lazy var contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    private var addressData = AddressData.addressLineOne
+    weak var delegate: AddressDataCellDelegate?
 
     // MARK: - Initialization
 
@@ -59,6 +65,7 @@ final class AddressDataCell: UITableViewCell, ReuseIdentifier {
     // MARK: - Configuration
 
     func configure(withData addressData: AddressData, text: String?) {
+        self.addressData = addressData
         let attributedPlaceholder = NSAttributedString(
             string: addressData.placeholder,
             attributes: [
@@ -70,6 +77,9 @@ final class AddressDataCell: UITableViewCell, ReuseIdentifier {
         textField.attributedPlaceholder = attributedPlaceholder
         textField.isUserInteractionEnabled = !addressData.shouldBePicked
         iconImageView.isHidden = !addressData.shouldBePicked
+        if case AddressData.zipCode = addressData {
+            textField.keyboardType = .numbersAndPunctuation
+        }
     }
 
     // MARK: - Setup
@@ -99,6 +109,8 @@ final class AddressDataCell: UITableViewCell, ReuseIdentifier {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension AddressDataCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         backgroundContainerView.layer.borderWidth = 1.0
@@ -108,6 +120,7 @@ extension AddressDataCell: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         backgroundContainerView.layer.borderWidth = 0.0
+        delegate?.didChange(text: textField.text, forDataType: addressData)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

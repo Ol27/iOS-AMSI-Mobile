@@ -1,17 +1,27 @@
 //
-//  HomeEventCell.swift
+//  EventCell.swift
 //  AMSI
 //
-//  Created by Anton Petrov on 18.10.2023.
+//  Created by Anton Petrov on 24.10.2023.
 //
 
 import SnapKit
 import UIKit
 
-final class HomeEventCell: UICollectionViewCell, ReuseIdentifier {
+
+final class EventCell: UITableViewCell, ReuseIdentifier {
     // MARK: - UI Elements
 
-    private let imageView = UIImageView().apply {
+    private let containerView = UIView().apply {
+        $0.backgroundColor = Assets.Colors.Shared.screenBackground.color
+        $0.layer.cornerRadius = 16
+        $0.layer.shadowColor = UIColor.darkGray.cgColor
+        $0.layer.shadowOffset = CGSize(width: 3, height: 3)
+        $0.layer.shadowRadius = 5
+        $0.layer.shadowOpacity = 0.1
+    }
+
+    private let previewImageView = UIImageView().apply {
         $0.contentMode = .scaleAspectFill
         $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 15
@@ -33,10 +43,7 @@ final class HomeEventCell: UICollectionViewCell, ReuseIdentifier {
                                                   fontColor: Assets.Colors.Shared.secondaryText.color,
                                                   alignment: .center)
 
-    private let bottomInfoContainerView = UIView().apply {
-        $0.backgroundColor = Assets.Colors.Shared.screenBackground.color
-        $0.layer.cornerRadius = 10
-    }
+    private let infoContainerView = UIView()
 
     private let infoContainerVerticalStackView = UIStackView().apply {
         $0.axis = .vertical
@@ -44,7 +51,7 @@ final class HomeEventCell: UICollectionViewCell, ReuseIdentifier {
 
     private let eventNameLabel = CustomStyleLabel(fontSize: 14, isBold: true, numberOfLines: 2)
 
-    private let bottomInfoContainerStackView = UIStackView().apply {
+    private let infoContainerStackView = UIStackView().apply {
         $0.spacing = 4
     }
 
@@ -59,24 +66,25 @@ final class HomeEventCell: UICollectionViewCell, ReuseIdentifier {
     private let eventTimeLabel = CustomStyleLabel(fontSize: 12,
                                                   fontColor: Assets.Colors.Shared.secondaryText.color)
 
-    private let openButton = SmallActionButton(text: LocalizedStrings.openButton)
+    private let openButton = SmallActionButton(text: LocalizedStrings.eventsFreeButton)
 
     // MARK: - Initialization
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         setup()
     }
 
     @available(*, unavailable)
-    required init?(coder _: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Configuration
 
     func configure(withEvent event: Event) {
-        imageView.image = event.image
+        previewImageView.image = event.image
         eventNameLabel.text = event.name
         dateDayLabel.text = event.dayDate
         dateMonthLabel.text = event.monthDate
@@ -87,54 +95,58 @@ final class HomeEventCell: UICollectionViewCell, ReuseIdentifier {
     // MARK: - Setup
 
     private func setup() {
-        contentView.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.width.equalTo(250)
-            make.height.equalTo(290)
-            make.edges.equalToSuperview()
+        contentView.addSubview(containerView)
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 8,
+                                                             left: 24,
+                                                             bottom: 8,
+                                                             right: 24))
+        }
+        containerView.addSubview(previewImageView)
+        previewImageView.snp.makeConstraints { make in
+            make.left.top.bottom.equalToSuperview().inset(12)
+            make.height.equalTo(96)
+            make.width.equalTo(88)
         }
 
-        contentView.addSubview(dateContainerView)
+        previewImageView.addSubview(dateContainerView)
         dateContainerView.snp.makeConstraints { make in
-            make.right.top.equalToSuperview().inset(12)
-            make.width.height.equalTo(48)
+            make.left.top.equalToSuperview().inset(8)
+            make.width.height.equalTo(32)
         }
 
         dateContainerView.addSubview(dateStackView)
         dateStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(8)
+            make.edges.equalToSuperview().inset(2)
         }
 
         dateStackView.addArrangedSubview(dateDayLabel)
         dateStackView.addArrangedSubview(dateMonthLabel)
 
-        contentView.addSubview(bottomInfoContainerView)
-        bottomInfoContainerView.snp.makeConstraints { make in
-            make.left.bottom.right.equalToSuperview().inset(12)
-            make.height.equalTo(106)
+        containerView.addSubview(infoContainerView)
+        infoContainerView.snp.makeConstraints { make in
+            make.top.right.bottom.equalToSuperview().inset(15)
+            make.left.equalTo(previewImageView.snp.right).offset(12)
         }
 
-        bottomInfoContainerView.addSubview(infoContainerVerticalStackView)
+        infoContainerView.addSubview(infoContainerVerticalStackView)
         infoContainerVerticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(12)
+            make.edges.equalToSuperview()
         }
-
         infoContainerVerticalStackView.addArrangedSubview(eventNameLabel)
-        infoContainerVerticalStackView.addArrangedSubview(UIView())
-
-        infoContainerVerticalStackView.addArrangedSubview(bottomInfoContainerStackView)
-        bottomInfoContainerStackView.snp.makeConstraints { make in
+        infoContainerVerticalStackView.addArrangedSubview(infoContainerStackView)
+        infoContainerStackView.snp.makeConstraints { make in
             make.height.equalTo(32)
         }
 
-        bottomInfoContainerStackView.addArrangedSubview(eventLocationLabel)
-        bottomInfoContainerStackView.addArrangedSubview(dotSeparatorImageView)
+        infoContainerStackView.addArrangedSubview(eventLocationLabel)
+        infoContainerStackView.addArrangedSubview(dotSeparatorImageView)
         dotSeparatorImageView.snp.makeConstraints { make in
             make.width.height.equalTo(4)
         }
 
-        bottomInfoContainerStackView.addArrangedSubview(eventTimeLabel)
-        bottomInfoContainerStackView.addArrangedSubview(UIView())
-        bottomInfoContainerStackView.addArrangedSubview(openButton)
+        infoContainerStackView.addArrangedSubview(eventTimeLabel)
+        infoContainerStackView.addArrangedSubview(UIView())
+        infoContainerStackView.addArrangedSubview(openButton)
     }
 }

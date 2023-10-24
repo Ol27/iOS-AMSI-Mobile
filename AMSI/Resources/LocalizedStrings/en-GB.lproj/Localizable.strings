@@ -1,11 +1,118 @@
-/* 
-  Localizable.strings
-  AMSI
+/*
+ Localizable.strings
+ AMSI
 
-  Created by Anton Petrov on 09.10.2023.
-  
-*/
+ Created by Anton Petrov on 09.10.2023.
+
+ */
 
 // MARK: - Onboarding screen
 
-"AMSI" = "AMSI";
+"FirstOnboardingTitle" = "Upload your resume";
+"SecondOnboardingTitle" = "Find Your Dream Job";
+"ThirdOnboardingTitle" = "Get your dream job";
+"FirstOnboardingText" = "To do this, fill out our \nconvenient form";
+"SecondOnboardingText" = "Search and find your dream job \neasily and quickly";
+"ThirdOnboardingText" = "Get your dream job & start working \nin a new company";
+"SkipButton" = "Skip";
+
+// MARK: - Authorization screen
+
+"WelcomeTitle" = "Let’s Get Started";
+"WelcomeText" = "Welcome  to Amsi find job \nyour dream";
+"EmailButton" = "Continue with Email";
+"ContinueWithGoogleButton" = "Continue with Google";
+"DontHaveAccountText" = "Don’t have an account?";
+"SignUpButton" = " Sign Up";
+
+// MARK: - SignUp screen
+
+"CreateAccount" = "Create an account";
+"FullName" = "Your full name";
+"Email" = "Email";
+"Password" = "Password";
+"OrSeparator" = "Or";
+"SignInWithGoogle" = "Sign In with Google";
+
+// MARK: - Verification screen
+
+"VerificationCode" = "Verification Code";
+"SendVerificationToEmail" = "We have to send the verification to your email";
+"ResendCode" = "Resend code";
+"VerifyButton" = "Verify";
+
+// MARK: - Success screen
+
+"ChangePasswordSuccess" = "You have successfully \nchanged your password";
+"VerifySuccess" = "You have successfully \nverified your account";
+"LoginButton" = "Login";
+
+// MARK: - Login screen
+
+"LoginTitle" = "Login";
+"ForgotPassword" = "Forgot Password?";
+"SignInButton" = "Sign In";
+
+// MARK: - Forgot password screen
+
+"ForgotPasswordText" = "Please enter the email address associated with your account.";
+"ConfirmPassword" = "Confirm Password";
+"SendMeEmailButton" = "Send me Email";
+
+// MARK: - Reset password screen
+
+"ResetPasswordTitle" = "Reset your password";
+"ResetPasswordText" = "Please enter a new password for your account.";
+"ConfirmPassword" = "Confirm Password";
+"CreateNewPasswordButton" = "Create New Password";
+
+// MARK: - Fill data screen
+
+"AddPhotoTitle" = "Add Your Photo";
+"UploadPhotoButton" = "Upload photo";
+"ContactInfoTitle" = "Contact Information";
+"AddressTitle" = "Address";
+"AddressLineOne" = "Address Line 1";
+"AddressLineTwo" = "Address Line 2(optional)";
+"CityLine" = "City";
+"CountryLine" = "Country";
+"ZipCodeLine" = "Zip Code";
+
+// MARK: - Photo library alert
+
+"PhotoPermissionsAlertTitle" = "Insufficient permissions";
+"PhotoPermissionsAlertText" = "This app requires access to your photo gallery. Please update your settings.";
+"PhotoPermissionAlertSettingsButton" = "Settings";
+"PhotoPermissionsAlertCancelButton" = "Cancel";
+
+// MARK: - Selection screen
+
+"SaveButton" = "Save";
+"PickCountry" = "Pick a country";
+"PickCity" = "Pick a city";
+
+// MARK: - Home screen
+
+"HomeScreenInfo" = "Find events and job near you";
+"UpcomingEventsTitle" = "Upcoming events";
+"SeeAllButton" = "See All";
+"OpenButton" = "Open";
+"JobsForYouTitle" = "Jobs for you";
+
+// MARK: - Events screen
+
+"EventsScreenTitle" = "Events";
+"EventsFreeButton" = "FREE";
+
+// MARK: - Event Details screen
+
+"EventAddressTitle" = "Address";
+"EventContactInfoTitle" = "Contact Information";
+"EventAboutTitle" = "About this event";
+
+// MARK: - Calendar permissions alert
+
+"CalendarPermissionsAlertTitle" = "Insufficient permissions";
+"CalendarPermissionsAlertText" = "This app requires access to your calendar. Please update your settings.";
+"CalendarPermissionAlertSettingsButton" = "Settings";
+"CalendarPermissionsAlertCancelButton" = "Cancel";

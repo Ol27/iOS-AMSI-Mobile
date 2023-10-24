@@ -5,7 +5,6 @@
 //  Created by Anton Petrov on 09.10.2023.
 //
 
-import CHIOTPField
 import SnapKit
 import UIKit
 
@@ -27,12 +26,12 @@ final class VerificationViewController: UIViewController {
                                              fontColor: Assets.Colors.Shared.secondaryText.color,
                                              alignment: .center)
 
-    private let emailLabel = CustomStyleLabel(text: "am**@gmail.com",
-                                              fontSize: 14,
+    private let emailLabel = CustomStyleLabel(fontSize: 14,
                                               isBold: true,
                                               alignment: .center)
 
-    private let pinField = CHIOTPFieldTwo().apply {
+    private let pinField = PinFieldTwo().apply {
+        $0.font = UIFont.boldSystemFont(ofSize: 20)
         $0.activeBoxBackgroundColor = .clear
         $0.activeBorderColor = Assets.Colors.Shared.mainAccent.color
         $0.borderColor = .clear

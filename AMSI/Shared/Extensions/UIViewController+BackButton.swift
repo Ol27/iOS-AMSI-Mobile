@@ -21,7 +21,7 @@ extension UIViewController {
         navigationItem.leftBarButtonItem = backButton
     }
 
-    @objc private func didTapCustomBackButton() {
+    @objc func didTapCustomBackButton() {
         navigationController?.popViewController(animated: true)
     }
 }

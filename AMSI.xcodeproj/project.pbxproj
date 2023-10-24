@@ -35,7 +35,6 @@
 		3A14061C2AD4973100ED8636 /* CustomStyleSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14061B2AD4973100ED8636 /* CustomStyleSeparator.swift */; };
 		3A14061F2AD4AC3B00ED8636 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14061E2AD4AC3B00ED8636 /* VerificationViewController.swift */; };
 		3A1406212AD4AD5900ED8636 /* UIViewController+TitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406202AD4AD5900ED8636 /* UIViewController+TitleLogo.swift */; };
-		3A1406242AD4B43900ED8636 /* CHIOTPField in Frameworks */ = {isa = PBXBuildFile; productRef = 3A1406232AD4B43900ED8636 /* CHIOTPField */; };
 		3A1406262AD54E1100ED8636 /*  SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1406252AD54E1100ED8636 /*  SuccessViewController.swift */; };
 		3A14062F2AD57EFF00ED8636 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14062E2AD57EFF00ED8636 /* MainTabBarController.swift */; };
 		3A1406802AD6ACBC00ED8636 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14067F2AD6ACBC00ED8636 /* PasswordTextField.swift */; };
@@ -71,6 +70,11 @@
 		3AB0B34D2ADD613100F79316 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B34C2ADD613100F79316 /* SearchViewController.swift */; };
 		3AB0B3502ADD614A00F79316 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B34F2ADD614A00F79316 /* JobsViewController.swift */; };
 		3AB0B3532ADD616000F79316 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3522ADD616000F79316 /* ProfileViewController.swift */; };
+		3AD203442AE7DB56005169C2 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD203432AE7DB56005169C2 /* EventCell.swift */; };
+		3AD203462AE7DC3C005169C2 /* Array+SafeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD203452AE7DC3C005169C2 /* Array+SafeElement.swift */; };
+		3AD203492AE7ED2C005169C2 /* EventVeiwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD203482AE7ED2C005169C2 /* EventVeiwController.swift */; };
+		3AD2034B2AE80CF1005169C2 /* UIView+FadeInFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2034A2AE80CF1005169C2 /* UIView+FadeInFeedback.swift */; };
+		3AD2034D2AE83937005169C2 /* PinFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2034C2AE83937005169C2 /* PinFieldView.swift */; };
 		3AD698EA2AE01F3900657B16 /* HomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698E92AE01F3900657B16 /* HomeViewHeader.swift */; };
 		3AD698EC2AE0230900657B16 /* HomeEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698EB2AE0230900657B16 /* HomeEventCell.swift */; };
 		3AD698EE2AE0280900657B16 /* SmallActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD698ED2AE0280900657B16 /* SmallActionButton.swift */; };
@@ -145,6 +149,11 @@
 		3AB0B34C2ADD613100F79316 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3AB0B34F2ADD614A00F79316 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		3AB0B3522ADD616000F79316 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3AD203432AE7DB56005169C2 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		3AD203452AE7DC3C005169C2 /* Array+SafeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeElement.swift"; sourceTree = "<group>"; };
+		3AD203482AE7ED2C005169C2 /* EventVeiwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVeiwController.swift; sourceTree = "<group>"; };
+		3AD2034A2AE80CF1005169C2 /* UIView+FadeInFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FadeInFeedback.swift"; sourceTree = "<group>"; };
+		3AD2034C2AE83937005169C2 /* PinFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinFieldView.swift; sourceTree = "<group>"; };
 		3AD698E92AE01F3900657B16 /* HomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHeader.swift; sourceTree = "<group>"; };
 		3AD698EB2AE0230900657B16 /* HomeEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventCell.swift; sourceTree = "<group>"; };
 		3AD698ED2AE0280900657B16 /* SmallActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallActionButton.swift; sourceTree = "<group>"; };
@@ -157,7 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1406242AD4B43900ED8636 /* CHIOTPField in Frameworks */,
 				3A1405E82AD42F9200ED8636 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +308,7 @@
 				3A4CB8622ADF195400F4A1BF /* StubViewController.swift */,
 				3AD698ED2AE0280900657B16 /* SmallActionButton.swift */,
 				3AD698F32AE0479500657B16 /* TagView.swift */,
+				3AD2034C2AE83937005169C2 /* PinFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +321,8 @@
 				3A1406202AD4AD5900ED8636 /* UIViewController+TitleLogo.swift */,
 				3A6D6E5C2AD9663D003EE439 /* UIViewController+Photos.swift */,
 				3A6D6E5E2AD9667C003EE439 /* UIViewController+BlurLoader.swift */,
+				3AD203452AE7DC3C005169C2 /* Array+SafeElement.swift */,
+				3AD2034A2AE80CF1005169C2 /* UIView+FadeInFeedback.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -401,6 +412,7 @@
 				3A6D6E4F2AD80A74003EE439 /* FillData */,
 				3AB0B3452ADD60C100F79316 /* Home */,
 				3AB0B3482ADD610400F79316 /* Events */,
+				3AD203472AE7ECAF005169C2 /* Event */,
 				3AB0B34B2ADD612600F79316 /* Search */,
 				3AB0B34E2ADD614100F79316 /* Jobs */,
 				3AB0B3512ADD615600F79316 /* Profile */,
@@ -624,6 +636,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB0B3492ADD610F00F79316 /* EventsViewController.swift */,
+				3AD203432AE7DB56005169C2 /* EventCell.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -650,6 +663,14 @@
 				3AB0B3522ADD616000F79316 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		3AD203472AE7ECAF005169C2 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				3AD203482AE7ED2C005169C2 /* EventVeiwController.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		3AD698F52AE04B9C00657B16 /* Models */ = {
@@ -700,7 +721,6 @@
 			name = AMSI;
 			packageProductDependencies = (
 				3A1405E72AD42F9200ED8636 /* SnapKit */,
-				3A1406232AD4B43900ED8636 /* CHIOTPField */,
 			);
 			productName = AMSI;
 			productReference = 3A1405BC2AD4261F00ED8636 /* AMSI.app */;
@@ -733,7 +753,6 @@
 			mainGroup = 3A1405B32AD4261F00ED8636;
 			packageReferences = (
 				3A1405E62AD42F9200ED8636 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				3A1406222AD4B43900ED8636 /* XCRemoteSwiftPackageReference "CHIOTPField" */,
 			);
 			productRefGroup = 3A1405BD2AD4261F00ED8636 /* Products */;
 			projectDirPath = "";
@@ -807,10 +826,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6D6E552AD81C8C003EE439 /* AddressData.swift in Sources */,
+				3AD203462AE7DC3C005169C2 /* Array+SafeElement.swift in Sources */,
 				3A1406212AD4AD5900ED8636 /* UIViewController+TitleLogo.swift in Sources */,
 				3A14061C2AD4973100ED8636 /* CustomStyleSeparator.swift in Sources */,
 				3A1405C42AD4261F00ED8636 /* SplashViewController.swift in Sources */,
 				3A6D6E732AD97B99003EE439 /* Country.swift in Sources */,
+				3AD2034B2AE80CF1005169C2 /* UIView+FadeInFeedback.swift in Sources */,
 				3AB0B3472ADD60D500F79316 /* HomeViewController.swift in Sources */,
 				3A6D6E5D2AD9663D003EE439 /* UIViewController+Photos.swift in Sources */,
 				3A4CB85A2ADED0B900F4A1BF /* TabCoordinator.swift in Sources */,
@@ -835,6 +856,7 @@
 				3A14060B2AD4698600ED8636 /* GoogleButton.swift in Sources */,
 				3A6D6E8A2AD9A06A003EE439 /* VerificationType.swift in Sources */,
 				3A1405E42AD42DA900ED8636 /* LocalizedStrings.swift in Sources */,
+				3AD2034D2AE83937005169C2 /* PinFieldView.swift in Sources */,
 				3A1406032AD43E2100ED8636 /* UIViewController+NavigationBar.swift in Sources */,
 				3A1406122AD4753800ED8636 /* UIViewController+BackButton.swift in Sources */,
 				3AD698EA2AE01F3900657B16 /* HomeViewHeader.swift in Sources */,
@@ -862,8 +884,10 @@
 				3A6D6E572AD84714003EE439 /* AddressDataCell.swift in Sources */,
 				3A1405EC2AD4301900ED8636 /* Applyable.swift in Sources */,
 				3A6D6E712AD97B95003EE439 /* City.swift in Sources */,
+				3AD203442AE7DB56005169C2 /* EventCell.swift in Sources */,
 				3A4CB8632ADF195400F4A1BF /* StubViewController.swift in Sources */,
 				3AD698EE2AE0280900657B16 /* SmallActionButton.swift in Sources */,
+				3AD203492AE7ED2C005169C2 /* EventVeiwController.swift in Sources */,
 				3A6D6E772AD98527003EE439 /* SelectionCell.swift in Sources */,
 				3A1405F02AD4340100ED8636 /* AuthCoordinator.swift in Sources */,
 			);
@@ -1111,14 +1135,6 @@
 				minimumVersion = 5.6.0;
 			};
 		};
-		3A1406222AD4B43900ED8636 /* XCRemoteSwiftPackageReference "CHIOTPField" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChiliLabs/CHIOTPField.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1126,11 +1142,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A1405E62AD42F9200ED8636 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		3A1406232AD4B43900ED8636 /* CHIOTPField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A1406222AD4B43900ED8636 /* XCRemoteSwiftPackageReference "CHIOTPField" */;
-			productName = CHIOTPField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

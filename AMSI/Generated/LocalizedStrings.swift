@@ -18,6 +18,14 @@ internal enum LocalizedStrings {
   internal static let addressLineTwo = LocalizedStrings.tr("Localizable", "AddressLineTwo", fallback: "Address Line 2(optional)")
   /// Address
   internal static let addressTitle = LocalizedStrings.tr("Localizable", "AddressTitle", fallback: "Address")
+  /// Settings
+  internal static let calendarPermissionAlertSettingsButton = LocalizedStrings.tr("Localizable", "CalendarPermissionAlertSettingsButton", fallback: "Settings")
+  /// Cancel
+  internal static let calendarPermissionsAlertCancelButton = LocalizedStrings.tr("Localizable", "CalendarPermissionsAlertCancelButton", fallback: "Cancel")
+  /// This app requires access to your calendar. Please update your settings.
+  internal static let calendarPermissionsAlertText = LocalizedStrings.tr("Localizable", "CalendarPermissionsAlertText", fallback: "This app requires access to your calendar. Please update your settings.")
+  /// Insufficient permissions
+  internal static let calendarPermissionsAlertTitle = LocalizedStrings.tr("Localizable", "CalendarPermissionsAlertTitle", fallback: "Insufficient permissions")
   /// You have successfully 
   /// changed your password
   internal static let changePasswordSuccess = LocalizedStrings.tr("Localizable", "ChangePasswordSuccess", fallback: "You have successfully \nchanged your password")
@@ -41,6 +49,16 @@ internal enum LocalizedStrings {
   internal static let email = LocalizedStrings.tr("Localizable", "Email", fallback: "Email")
   /// Continue with Email
   internal static let emailButton = LocalizedStrings.tr("Localizable", "EmailButton", fallback: "Continue with Email")
+  /// About this event
+  internal static let eventAboutTitle = LocalizedStrings.tr("Localizable", "EventAboutTitle", fallback: "About this event")
+  /// Address
+  internal static let eventAddressTitle = LocalizedStrings.tr("Localizable", "EventAddressTitle", fallback: "Address")
+  /// Contact Information
+  internal static let eventContactInfoTitle = LocalizedStrings.tr("Localizable", "EventContactInfoTitle", fallback: "Contact Information")
+  /// FREE
+  internal static let eventsFreeButton = LocalizedStrings.tr("Localizable", "EventsFreeButton", fallback: "FREE")
+  /// Events
+  internal static let eventsScreenTitle = LocalizedStrings.tr("Localizable", "EventsScreenTitle", fallback: "Events")
   /// To do this, fill out our 
   /// convenient form
   internal static let firstOnboardingText = LocalizedStrings.tr("Localizable", "FirstOnboardingText", fallback: "To do this, fill out our \nconvenient form")

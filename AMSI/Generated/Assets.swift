@@ -36,6 +36,7 @@ internal enum Assets {
       internal static let border = ColorAsset(name: "Border")
       internal static let cellBackground = ColorAsset(name: "CellBackground")
       internal static let filledButtonText = ColorAsset(name: "FilledButtonText")
+      internal static let lightGrayText = ColorAsset(name: "LightGrayText")
       internal static let mainAccent = ColorAsset(name: "MainAccent")
       internal static let mainText = ColorAsset(name: "MainText")
       internal static let screenBackground = ColorAsset(name: "ScreenBackground")
@@ -55,6 +56,19 @@ internal enum Assets {
       internal static let amsiLogo = ImageAsset(name: "AmsiLogo")
       internal static let authorizationImage = ImageAsset(name: "AuthorizationImage")
       internal static let googleLogo = ImageAsset(name: "googleLogo")
+    }
+    internal enum EventDetails {
+      internal static let addressIcon = ImageAsset(name: "AddressIcon")
+      internal static let calendarButton = ImageAsset(name: "CalendarButton")
+      internal static let contactInfoIcon = ImageAsset(name: "ContactInfoIcon")
+      internal static let copyButton = ImageAsset(name: "CopyButton")
+      internal static let heartButton = ImageAsset(name: "HeartButton")
+      internal static let heartFilledButton = ImageAsset(name: "HeartFilledButton")
+      internal static let unknownButton = ImageAsset(name: "UnknownButton")
+    }
+    internal enum Events {
+      internal static let mapButton = ImageAsset(name: "MapButton")
+      internal static let searchButton = ImageAsset(name: "SearchButton")
     }
     internal enum FillData {
       internal static let addPhotoIcon = ImageAsset(name: "addPhotoIcon")

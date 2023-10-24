@@ -62,7 +62,7 @@ final class SignUpViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func didTapSignUpButton() {
-        coordinator?.navigateToVerification()
+        coordinator?.signIn()
     }
 
     @objc private func didTapGoogleButton() {

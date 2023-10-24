@@ -59,8 +59,10 @@ final class FillDataViewController: UIViewController {
 
     private let contactInfoView = UIView()
 
-    private let phoneTextfield = AuthorizationTextField(placeholderText: "+ 1",
-                                                        icon: Assets.Images.FillData.usaFlag.image)
+    private let phoneTextfield = AuthorizationTextField(icon: Assets.Images.FillData.usaFlag.image).apply {
+        $0.textField.text = "+ 1"
+        $0.textField.keyboardType = .numbersAndPunctuation
+    }
 
     private let emailTextField = AuthorizationTextField(placeholderText: LocalizedStrings.email, icon: Assets.Images.SignUp.emailIcon.image)
 
@@ -91,10 +93,12 @@ final class FillDataViewController: UIViewController {
         animateToStep(step)
         configureTableView()
         setupSelectors()
+        setupDelegates()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addressTableView.reloadData()
         hideNavigationBar()
     }
 
@@ -260,6 +264,10 @@ final class FillDataViewController: UIViewController {
         skipButton.addTarget(self, action: #selector(didTapSkipButton), for: .touchUpInside)
         uploadPhotoButton.addTarget(self, action: #selector(didTapUploadPhotoButton), for: .touchUpInside)
     }
+
+    private func setupDelegates() {
+        phoneTextfield.textFieldDelegate = self
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -287,6 +295,7 @@ extension FillDataViewController: UITableViewDataSource {
         case .zipCode:
             text = userData.zipCode
         }
+        cell.delegate = self
         cell.configure(withData: data, text: text)
         return cell
     }
@@ -344,5 +353,37 @@ extension FillDataViewController: SelectionViewControllerDelegate {
             userData.countryId = int
         }
         addressTableView.reloadData()
+    }
+}
+
+// MARK: - AddressDataCellDelegate
+
+extension FillDataViewController: AddressDataCellDelegate {
+    func didChange(text: String?, forDataType addressData: AddressData) {
+        switch addressData {
+        case .addressLineOne:
+            userData.addressLineOne = text
+        case .addressLineTwo:
+            userData.addressLineTwo = text
+        case .country:
+            break
+        case .city:
+            break
+        case .zipCode:
+            userData.zipCode = text
+        }
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension FillDataViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        if !newText.hasPrefix("+ 1") {
+            return false
+        }
+        return true
     }
 }

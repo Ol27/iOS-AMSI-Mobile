@@ -35,6 +35,8 @@ final class AuthorizationTextField: UIView {
         return imageView
     }()
 
+    weak var textFieldDelegate: UITextFieldDelegate?
+
     init(placeholderText: String = "", icon: UIImage? = nil) {
         super.init(frame: .zero)
 
@@ -89,13 +91,20 @@ extension AuthorizationTextField: UITextFieldDelegate {
         layer.borderWidth = 1.0
         layer.borderColor = Assets.Colors.Shared.mainAccent.color.cgColor
         layer.cornerRadius = 8.0
+        textFieldDelegate?.textFieldDidBeginEditing?(textField)
     }
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         layer.borderWidth = 0.0
+        textFieldDelegate?.textFieldDidEndEditing?(textField, reason: reason)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return textFieldDelegate?.textFieldShouldReturn?(textField) == false
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        textFieldDelegate?.textField?(textField, shouldChangeCharactersIn: range, replacementString: string) ?? true
     }
 }

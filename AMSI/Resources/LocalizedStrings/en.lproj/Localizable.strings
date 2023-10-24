@@ -98,3 +98,21 @@
 "SeeAllButton" = "See All";
 "OpenButton" = "Open";
 "JobsForYouTitle" = "Jobs for you";
+
+// MARK: - Events screen
+
+"EventsScreenTitle" = "Events";
+"EventsFreeButton" = "FREE";
+
+// MARK: - Event Details screen
+
+"EventAddressTitle" = "Address";
+"EventContactInfoTitle" = "Contact Information";
+"EventAboutTitle" = "About this event";
+
+// MARK: - Calendar permissions alert
+
+"CalendarPermissionsAlertTitle" = "Insufficient permissions";
+"CalendarPermissionsAlertText" = "This app requires access to your calendar. Please update your settings.";
+"CalendarPermissionAlertSettingsButton" = "Settings";
+"CalendarPermissionsAlertCancelButton" = "Cancel";

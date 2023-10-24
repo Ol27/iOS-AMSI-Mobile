@@ -26,6 +26,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupAppearances() {
+        UINavigationBar.appearance().barTintColor = .black
         UITableView.appearance().backgroundColor = .clear
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = .clear

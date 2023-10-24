@@ -61,6 +61,7 @@ final class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Assets.Colors.Shared.screenBackground.color
         setupUI()
         setupSelectors()
         switchTab()
