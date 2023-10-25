@@ -5,6 +5,7 @@
 //  Created by Anton Petrov on 25.10.2023.
 //
 
+import GoogleMaps
 import SnapKit
 import UIKit
 
@@ -32,7 +33,7 @@ final class EventsMapViewController: UIViewController {
         $0.isScrollEnabled = false
     }
 
-    private let mapView = UIView().apply {
+    private let mapView = GMSMapView().apply {
         $0.backgroundColor = .lightGray
     }
 
@@ -44,11 +45,12 @@ final class EventsMapViewController: UIViewController {
     // MARK: - Initialization
 
     init(events: [Event] = mockEvents) {
-        self.events = events
+        self.events = events.filter { $0.location != nil }
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -61,6 +63,7 @@ final class EventsMapViewController: UIViewController {
         setupTableView()
         setupMapView()
         setupSelectors()
+        configureMapView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -129,24 +132,60 @@ final class EventsMapViewController: UIViewController {
             make.top.left.right.equalToSuperview()
             make.bottom.equalTo(bottomContainerView.snp.top).inset(40)
         }
+        mapView.delegate = self
     }
 
     private func setupSelectors() {
         backButton.addTarget(self, action: #selector(didTapCustomBackButton), for: .touchUpInside)
+    }
+
+    // MARK: - Map configuration
+
+    private func configureMapView() {
+        if let firstEventLocation = events.first?.location {
+            let camera = GMSCameraPosition.camera(withLatitude: firstEventLocation.latitude, longitude: firstEventLocation.longitude, zoom: 12)
+            mapView.camera = camera
+        }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.addMarkersToMap()
+            self?.fitAllMarkersOnMap()
+        }
+    }
+
+    private func addMarkersToMap() {
+        for event in events {
+            guard let location = event.location else { continue }
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+            let markerView = EventMarkerView(roundImage: event.image)
+            marker.iconView = markerView
+            marker.userData = event
+            marker.map = mapView
+        }
+    }
+
+    private func fitAllMarkersOnMap() {
+        let path = GMSMutablePath()
+        for event in events {
+            guard let location = event.location else { continue }
+            path.add(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+        }
+        let bounds = GMSCoordinateBounds(path: path)
+        mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 100))
     }
 }
 
 // MARK: - UITableViewDataSource
 
 extension EventsMapViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.reuseIdentifier,
                                                        for: indexPath) as? EventCell,
-              let event = events.safeElement(at: indexPath.row)
+            let event = events.safeElement(at: indexPath.row)
         else { return UITableViewCell() }
         cell.configure(withEvent: event)
         return cell
@@ -156,9 +195,21 @@ extension EventsMapViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension EventsMapViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let event = events.safeElement(at: indexPath.row) else { return }
         let viewController = EventViewController(event: event)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - GMSMapViewDelegate
+
+extension EventsMapViewController: GMSMapViewDelegate {
+    func mapView(_: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let event = marker.userData as? Event {
+            let viewController = EventViewController(event: event)
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+        return true
     }
 }

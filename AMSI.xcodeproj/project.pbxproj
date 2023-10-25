@@ -69,6 +69,7 @@
 		3A6D6E8A2AD9A06A003EE439 /* VerificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E892AD9A06A003EE439 /* VerificationType.swift */; };
 		3A6D6E942AD9AF44003EE439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */; };
 		3A6D6E972AD9B026003EE439 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */; };
+		3A9B7D892AE951070015F837 /* EventMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B7D882AE951070015F837 /* EventMarkerView.swift */; };
 		3AB0B3442ADD506D00F79316 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3432ADD506D00F79316 /* MainTab.swift */; };
 		3AB0B3472ADD60D500F79316 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3462ADD60D500F79316 /* HomeViewController.swift */; };
 		3AB0B34A2ADD610F00F79316 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3492ADD610F00F79316 /* EventsViewController.swift */; };
@@ -155,6 +156,7 @@
 		3A6D6E892AD9A06A003EE439 /* VerificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationType.swift; sourceTree = "<group>"; };
 		3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		3A9B7D882AE951070015F837 /* EventMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMarkerView.swift; sourceTree = "<group>"; };
 		3AB0B3432ADD506D00F79316 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		3AB0B3462ADD60D500F79316 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3AB0B3492ADD610F00F79316 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		3A1405BE2AD4261F00ED8636 /* AMSI */ = {
 			isa = PBXGroup;
 			children = (
+				3A48E9EC2AE940E4005F18BF /* ApiKeys.swift */,
 				3A1406042AD443D200ED8636 /* Presentation */,
 				3A6D6E582AD9540F003EE439 /* Services */,
 				3A1405E92AD4300400ED8636 /* Shared */,
@@ -222,7 +225,6 @@
 		3A1405D32AD4266E00ED8636 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				3A48E9EC2AE940E4005F18BF /* ApiKeys.swift */,
 				3A1405CA2AD4262000ED8636 /* LaunchScreen.storyboard */,
 				3A1405CD2AD4262000ED8636 /* Info.plist */,
 			);
@@ -438,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				3A48E9E22AE92347005F18BF /* EventsMapViewController.swift */,
+				3A9B7D882AE951070015F837 /* EventMarkerView.swift */,
 			);
 			path = EventsMap;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 		};
 		3A39307D2AE07EA2004CB6C9 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -935,6 +939,7 @@
 				3A48E9E92AE933BF005F18BF /* UIViewController+TabBarHide.swift in Sources */,
 				3AB0B34D2ADD613100F79316 /* SearchViewController.swift in Sources */,
 				3A41C6232ADFE7E1007BCDD2 /* Event.swift in Sources */,
+				3A9B7D892AE951070015F837 /* EventMarkerView.swift in Sources */,
 				3A48E9ED2AE940E4005F18BF /* ApiKeys.swift in Sources */,
 				3AD698F42AE0479500657B16 /* TagView.swift in Sources */,
 				3A6D6E512AD81600003EE439 /* FillDataViewController.swift in Sources */,

@@ -16,7 +16,6 @@ protocol PinLabel: UIView {
 }
 
 class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
-
     var numberOfDigits: Int = 4 {
         didSet { redraw() }
     }
@@ -26,12 +25,12 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
     }
 
     var labels: [Label] {
-        return stackView.arrangedSubviews.compactMap({ $0 as? Label })
+        return stackView.arrangedSubviews.compactMap { $0 as? Label }
     }
 
-    open override var text: String? {
+    override open var text: String? {
         didSet {
-            self.changeText(oldValue: oldValue, newValue: text)
+            changeText(oldValue: oldValue, newValue: text)
         }
     }
 
@@ -46,7 +45,7 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
     }()
 
     private var _textColor: UIColor?
-    open override var textColor: UIColor? {
+    override open var textColor: UIColor? {
         didSet {
             if _textColor == nil {
                 _textColor = oldValue
@@ -59,7 +58,7 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
         setup()
     }
 
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
@@ -79,7 +78,7 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
         addSubview(stackView)
     }
 
-    open override func setNeedsLayout() {
+    override open func setNeedsLayout() {
         super.setNeedsLayout()
         stackView.frame = bounds
     }
@@ -87,22 +86,22 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
     open func redraw() {
         stackView.spacing = CGFloat(spacing)
 
-        stackView.arrangedSubviews.forEach { (view) in
+        stackView.arrangedSubviews.forEach { view in
             stackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
 
-        for _ in 0 ..< self.numberOfDigits {
+        for _ in 0 ..< numberOfDigits {
             let label = Label(frame: .zero)
             label.font = font
             label.isUserInteractionEnabled = false
-            self.stackView.addArrangedSubview(label)
+            stackView.addArrangedSubview(label)
         }
     }
 
     private func updateFocus() {
         let focusIndex = text?.count ?? 0
-        labels.enumerated().forEach { (index, label) in
+        labels.enumerated().forEach { index, label in
             label.active = index == focusIndex
         }
     }
@@ -115,8 +114,8 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
         labels[focusIndex].active = false
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard var text = self.text else {
+    func textField(_: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
+        guard var text = text else {
             return false
         }
 
@@ -131,28 +130,28 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
         return text.count < numberOfDigits
     }
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_: UITextField) {
         updateFocus()
     }
 
     @objc private func textChanged() {
         guard let text = text, text.count <= numberOfDigits else { return }
 
-        labels.enumerated().forEach({ (index, label) in
+        labels.enumerated().forEach { index, label in
 
             if index < text.count {
                 let index = text.index(text.startIndex, offsetBy: index)
                 let char = isSecureTextEntry ? "●" : String(text[index])
                 label.text = char
             }
-        })
+        }
         updateFocus()
     }
 
-    private func changeText(oldValue: String?, newValue: String?) {
+    private func changeText(oldValue _: String?, newValue _: String?) {
         guard let text = text, text.count <= numberOfDigits else { return }
 
-        labels.enumerated().forEach({ (index, label) in
+        labels.enumerated().forEach { index, label in
 
             if index < text.count {
                 let index = text.index(text.startIndex, offsetBy: index)
@@ -160,30 +159,29 @@ class PinField<Label: PinLabel>: UITextField, UITextFieldDelegate {
                 label.text = char
                 label.updateState()
             }
-        })
-        if self.isFirstResponder {
+        }
+        if isFirstResponder {
             updateFocus()
         }
     }
 
-    public func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_: UITextField) {
         removeFocus()
     }
 
-    open override func caretRect(for position: UITextPosition) -> CGRect {
-        let index = self.text?.count ?? 0
+    override open func caretRect(for _: UITextPosition) -> CGRect {
+        let index = text?.count ?? 0
         guard index < stackView.arrangedSubviews.count else {
             return .zero
         }
 
-        let viewFrame = self.stackView.arrangedSubviews[index].frame
-        let caretHeight = self.font?.pointSize ?? ceil(self.frame.height * 0.6)
-        return CGRect(x: viewFrame.midX - 1, y: ceil((self.frame.height - caretHeight) / 2), width: 2, height: caretHeight)
+        let viewFrame = stackView.arrangedSubviews[index].frame
+        let caretHeight = font?.pointSize ?? ceil(frame.height * 0.6)
+        return CGRect(x: viewFrame.midX - 1, y: ceil((frame.height - caretHeight) / 2), width: 2, height: caretHeight)
     }
 }
 
 final class PinFieldTwo: PinField<PinFieldTwoLabel> {
-
     override var numberOfDigits: Int { didSet { redraw() } }
 
     override var spacing: Int { didSet { redraw() } }
@@ -226,7 +224,7 @@ final class PinFieldTwo: PinField<PinFieldTwoLabel> {
 
     override func redraw() {
         super.redraw()
-        labels.forEach { (label) in
+        labels.forEach { label in
             label.backgroundColor = boxBackgroundColor
             label.activeBackgroundColor = activeBoxBackgroundColor
             label.filledBackgroundColor = filledBoxBackgroundColor
@@ -281,7 +279,7 @@ final class PinFieldTwoLabel: UIView, PinLabel {
         get { return _backgroundColor }
         set {
             _backgroundColor = newValue
-            self.layer.backgroundColor = newValue?.cgColor
+            layer.backgroundColor = newValue?.cgColor
         }
     }
 
@@ -300,24 +298,25 @@ final class PinFieldTwoLabel: UIView, PinLabel {
     }
 
     override init(frame: CGRect) {
-        self.label = UILabel(frame: frame)
+        label = UILabel(frame: frame)
         super.init(frame: frame)
-        self.addSubview(label)
+        addSubview(label)
         label.alpha = 0
-        self.label.textAlignment = .center
-        self.clipsToBounds = false
+        label.textAlignment = .center
+        clipsToBounds = false
     }
 
     func updateState() {
-        self.stopAnimation()
+        stopAnimation()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.label.frame = self.bounds
+        label.frame = bounds
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -325,20 +324,20 @@ final class PinFieldTwoLabel: UIView, PinLabel {
         guard oldValue != newValue else { return }
 
         if newValue == true {
-            self.startAnimation()
+            startAnimation()
         } else {
-            self.stopAnimation()
+            stopAnimation()
         }
     }
 
     private func redraw() {
-        self.layer.borderColor = self.borderColor?.cgColor
-        self.layer.borderWidth = 1
-        self.layer.cornerRadius = self.cornerRadius
+        layer.borderColor = borderColor?.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = cornerRadius
         if let placeholder = placeholder {
-            self.label.textColor = placeholderColor
-            self.label.text = placeholder
-            self.label.alpha = 1
+            label.textColor = placeholderColor
+            label.text = placeholder
+            label.alpha = 1
         }
     }
 

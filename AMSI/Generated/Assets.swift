@@ -67,6 +67,7 @@ internal enum Assets {
       internal static let unknownButton = ImageAsset(name: "UnknownButton")
     }
     internal enum Events {
+      internal static let eventMarker = ImageAsset(name: "EventMarker")
       internal static let mapButton = ImageAsset(name: "MapButton")
       internal static let mapEventsIndicator = ImageAsset(name: "MapEventsIndicator")
       internal static let searchButton = ImageAsset(name: "SearchButton")

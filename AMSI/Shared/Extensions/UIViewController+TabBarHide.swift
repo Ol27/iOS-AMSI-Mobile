@@ -9,10 +9,10 @@ import UIKit
 
 extension UIViewController {
     func hideCustomTabBar() {
-        (self.tabBarController as? MainTabBarController)?.hideTabBar()
+        (tabBarController as? MainTabBarController)?.hideTabBar()
     }
 
     func showCustomTabBar() {
-        (self.tabBarController as? MainTabBarController)?.showTabBar()
+        (tabBarController as? MainTabBarController)?.showTabBar()
     }
 }

@@ -40,7 +40,7 @@ final class SelectionViewController: UIViewController {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -116,7 +116,7 @@ final class SelectionViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension SelectionViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         items.count
     }
 

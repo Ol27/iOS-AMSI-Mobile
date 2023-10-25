@@ -16,6 +16,7 @@ final class EventViewController: UIViewController {
     private let topStackView = UIStackView().apply {
         $0.spacing = 8
     }
+
     private let backButton = UIButton().apply {
         $0.setImage(Assets.Images.Shared.backButton.image, for: .normal)
     }
@@ -30,7 +31,6 @@ final class EventViewController: UIViewController {
     }
 
     private let eventInfoScrollView = UIScrollView()
-
     private let eventInfoStackView = UIStackView().apply {
         $0.axis = .vertical
         $0.spacing = 20
@@ -43,7 +43,6 @@ final class EventViewController: UIViewController {
     }
 
     private let eventTitleLabel = CustomStyleLabel(fontSize: 20, isBold: true, numberOfLines: 0)
-
     private let dateHorizontalStackView = UIStackView().apply {
         $0.alignment = .center
         $0.spacing = 16
@@ -82,6 +81,7 @@ final class EventViewController: UIViewController {
     private let addressIconImageView = UIImageView().apply {
         $0.image = Assets.Images.EventDetails.addressIcon.image
     }
+
     private let addressTitleLabel = CustomStyleLabel(text: LocalizedStrings.eventAddressTitle,
                                                      fontSize: 16,
                                                      isBold: true)
@@ -89,6 +89,7 @@ final class EventViewController: UIViewController {
         $0.isUserInteractionEnabled = true
         $0.image = Assets.Images.EventDetails.copyButton.image
     }
+
     private let addressLabel = CustomStyleLabel(fontSize: 14,
                                                 fontColor: Assets.Colors.Shared.lightGrayText.color)
 
@@ -96,6 +97,7 @@ final class EventViewController: UIViewController {
     private let contactInformationIconImageView = UIImageView().apply {
         $0.image = Assets.Images.EventDetails.contactInfoIcon.image
     }
+
     private let contactInformationTitleLabel = CustomStyleLabel(text: LocalizedStrings.eventContactInfoTitle,
                                                                 fontSize: 16,
                                                                 isBold: true)
@@ -138,7 +140,7 @@ final class EventViewController: UIViewController {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -172,8 +174,8 @@ final class EventViewController: UIViewController {
         isFavorite.toggle()
         heartButtonImageView.fadeInWithFeedback()
         heartButtonImageView.image = isFavorite
-        ? Assets.Images.EventDetails.heartFilledButton.image
-        : Assets.Images.EventDetails.heartButton.image
+            ? Assets.Images.EventDetails.heartFilledButton.image
+            : Assets.Images.EventDetails.heartButton.image
     }
 
     @objc private func didTapCopyButton() {
@@ -188,7 +190,7 @@ final class EventViewController: UIViewController {
         case .denied:
             showAlertToOpenCalendarPermissionsSettings()
         case .notDetermined:
-            eventStore.requestAccess(to: .event) { [weak self] (granted, _) -> Void in
+            eventStore.requestAccess(to: .event) { [weak self] granted, _ in
                 DispatchQueue.main.async {
                     if granted {
                         self?.presentEventEditController()
@@ -209,7 +211,7 @@ final class EventViewController: UIViewController {
         let createdEvent = EKEvent(eventStore: eventStore)
         createdEvent.title = event.name
         createdEvent.startDate = Date()
-        createdEvent.endDate = Date().addingTimeInterval(60*60)
+        createdEvent.endDate = Date().addingTimeInterval(60 * 60)
         createdEvent.notes = event.aboutInfo
         createdEvent.location = event.address
         let editViewController = EKEventEditViewController()
@@ -217,7 +219,7 @@ final class EventViewController: UIViewController {
         editViewController.event = createdEvent
         editViewController.eventStore = eventStore
         editViewController.editViewDelegate = self
-        self.present(editViewController, animated: true, completion: nil)
+        present(editViewController, animated: true, completion: nil)
     }
 
     private func showAlertToOpenCalendarPermissionsSettings() {
@@ -239,16 +241,15 @@ final class EventViewController: UIViewController {
         hideActivityIndicator()
         present(alertController, animated: true)
     }
-
 }
 
 extension EventViewController: EKEventEditViewDelegate {
-    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith _: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
     }
 }
 
-    // MARK: - Setup
+// MARK: - Setup
 
 extension EventViewController {
     private func setupTopStackView() {
@@ -290,7 +291,7 @@ extension EventViewController {
         eventInfoStackView.addArrangedSubview(eventImageView)
         eventImageView.snp.makeConstraints { make in
             make.width.equalToSuperview()
-            make.height.equalTo(eventImageView.snp.width).multipliedBy(240.0/327.0)
+            make.height.equalTo(eventImageView.snp.width).multipliedBy(240.0 / 327.0)
         }
 
         eventInfoStackView.addArrangedSubview(eventTitleLabel)
@@ -389,13 +390,10 @@ extension EventViewController {
 
     private func setupSelectors() {
         backButton.addTarget(self, action: #selector(didTapCustomBackButton), for: .touchUpInside)
-
         let copyTapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCopyButton))
         copyAddressButtonImageView.addGestureRecognizer(copyTapGesture)
-
         let favoriteTapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapHeartButton))
         heartButtonImageView.addGestureRecognizer(favoriteTapGesture)
-
         let calendarTapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCalendarButton))
         calendarButtonImageView.addGestureRecognizer(calendarTapGesture)
     }

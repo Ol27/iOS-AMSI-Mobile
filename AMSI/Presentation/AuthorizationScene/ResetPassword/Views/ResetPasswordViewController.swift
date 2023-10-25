@@ -120,7 +120,7 @@ final class ResetPasswordViewController: UIViewController {
         createNewPasswordButton.layoutIfNeeded()
     }
 
-    private func liftBottomViews(keyboardHeight: CGFloat) {
+    private func liftBottomViews(keyboardHeight _: CGFloat) {
         createNewPasswordButton.snp.remakeConstraints { make in
             make.centerX.equalToSuperview()
             make.left.right.equalToSuperview().inset(24)

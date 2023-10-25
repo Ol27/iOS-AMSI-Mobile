@@ -5,6 +5,7 @@
 //  Created by Anton Petrov on 09.10.2023.
 //
 
+import GoogleMaps
 import UIKit
 
 @main
@@ -12,8 +13,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: AppCoordinatorProtocol?
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_: UIApplication,
+                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .systemBackground
         let navigationController: UINavigationController = .init()
@@ -22,6 +23,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.start()
         setupAppearances()
+        setupApiKeys()
         return true
     }
 
@@ -31,5 +33,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = .clear
         UICollectionView.appearance().backgroundColor = .clear
+    }
+
+    private func setupApiKeys() {
+        GMSServices.provideAPIKey(ApiKeys.googleMapsKey)
     }
 }

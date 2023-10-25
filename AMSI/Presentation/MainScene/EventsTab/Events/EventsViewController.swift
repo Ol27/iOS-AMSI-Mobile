@@ -14,6 +14,7 @@ final class EventsViewController: UIViewController {
     private let topStackView = UIStackView().apply {
         $0.spacing = 8
     }
+
     private let titleLabel = CustomStyleLabel(text: LocalizedStrings.eventsScreenTitle,
                                               fontSize: 20,
                                               isBold: true)
@@ -41,7 +42,8 @@ final class EventsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -108,14 +110,14 @@ final class EventsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension EventsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.reuseIdentifier,
                                                        for: indexPath) as? EventCell,
-                let event = events.safeElement(at: indexPath.row)
+            let event = events.safeElement(at: indexPath.row)
         else { return UITableViewCell() }
         cell.configure(withEvent: event)
         return cell
@@ -125,7 +127,7 @@ extension EventsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension EventsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let event = events.safeElement(at: indexPath.row) else { return }
         let viewController = EventViewController(event: event)
         navigationController?.pushViewController(viewController, animated: true)

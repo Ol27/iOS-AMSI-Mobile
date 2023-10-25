@@ -8,7 +8,7 @@
 import Photos
 import UIKit
 
-protocol ImagePickerDelegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate {}
+protocol ImagePickerDelegate: AnyObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {}
 
 extension ImagePickerDelegate where Self: UIViewController {
     func requestPhotoLibraryAuthorization() {

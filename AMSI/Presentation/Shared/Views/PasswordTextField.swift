@@ -62,7 +62,7 @@ final class PasswordTextField: UIView {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -107,13 +107,13 @@ final class PasswordTextField: UIView {
 }
 
 extension PasswordTextField: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_: UITextField) {
         layer.borderWidth = 1.0
         layer.borderColor = Assets.Colors.Shared.mainAccent.color.cgColor
         layer.cornerRadius = 8.0
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    func textFieldDidEndEditing(_: UITextField, reason _: UITextField.DidEndEditingReason) {
         layer.borderWidth = 0.0
     }
 

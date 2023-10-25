@@ -58,7 +58,7 @@ final class AddressDataCell: UITableViewCell, ReuseIdentifier {
     }
 
     @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -112,13 +112,13 @@ final class AddressDataCell: UITableViewCell, ReuseIdentifier {
 // MARK: - UITextFieldDelegate
 
 extension AddressDataCell: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_: UITextField) {
         backgroundContainerView.layer.borderWidth = 1.0
         backgroundContainerView.layer.borderColor = Assets.Colors.Shared.mainAccent.color.cgColor
         backgroundContainerView.layer.cornerRadius = 8.0
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    func textFieldDidEndEditing(_ textField: UITextField, reason _: UITextField.DidEndEditingReason) {
         backgroundContainerView.layer.borderWidth = 0.0
         delegate?.didChange(text: textField.text, forDataType: addressData)
     }

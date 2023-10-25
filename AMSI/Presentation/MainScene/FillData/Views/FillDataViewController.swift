@@ -121,8 +121,7 @@ final class FillDataViewController: UIViewController {
             animateToStep(.address)
         case .address:
             delegate?.didFillDataFor(user: userData)
-            dismiss(animated: true) { [weak self] in
-                guard let self, let city = self.userData.city, let country = self.userData.country else { return }
+            dismiss(animated: true) {
                 SettingsManager.shared.didFilledData = true
             }
         }
@@ -213,7 +212,10 @@ final class FillDataViewController: UIViewController {
         nextPageButton.snp.makeConstraints { make in
             make.width.height.equalTo(48)
         }
+        setupContainerStackView()
+    }
 
+    private func setupContainerStackView() {
         view.addSubview(containerStackView)
         containerStackView.snp.makeConstraints { make in
             make.top.equalTo(topStackView.snp.bottom).offset(32)
@@ -273,7 +275,7 @@ final class FillDataViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension FillDataViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         AddressData.allCases.count
     }
 
@@ -304,7 +306,7 @@ extension FillDataViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension FillDataViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let addressData = AddressData(rawValue: indexPath.row) else { return }
         let selectionController: SelectionViewController
         switch addressData {
@@ -345,7 +347,7 @@ extension FillDataViewController: ImagePickerDelegate {
 // MARK: - SelectionViewControllerDelegate
 
 extension FillDataViewController: SelectionViewControllerDelegate {
-    func didSelect(item: SelectionType, atIndex: Int) {
+    func didSelect(item: SelectionType, atIndex _: Int) {
         switch item {
         case let .city(int):
             userData.cityId = int

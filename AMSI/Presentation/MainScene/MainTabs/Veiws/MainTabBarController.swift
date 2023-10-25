@@ -109,7 +109,6 @@ final class MainTabBarController: UITabBarController {
                                                                      y: self.customTabBarContainer.bounds.height)
         } completion: { _ in
             self.customTabBarContainer.isHidden = true
-
         }
     }
 
@@ -179,6 +178,10 @@ final class MainTabBarController: UITabBarController {
             make.width.height.equalTo(60)
         }
 
+        setupTabBarContainerStackView()
+    }
+
+    private func setupTabBarContainerStackView() {
         tabBarBackgroundImageView.addSubview(tabContainerStackView)
         tabContainerStackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -197,7 +200,10 @@ final class MainTabBarController: UITabBarController {
 
         tabContainerStackView.addArrangedSubview(jobsTabImageView)
         tabContainerStackView.addArrangedSubview(profileTabImageView)
+        setupCustomTabBarContainer()
+    }
 
+    private func setupCustomTabBarContainer() {
         customTabBarContainer.addSubview(homeTabButton)
         homeTabButton.snp.makeConstraints { make in
             make.center.equalTo(homeTabImageView)

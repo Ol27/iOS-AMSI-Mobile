@@ -11,7 +11,7 @@ extension UIView {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
-        self.alpha = 0.3
+        alpha = 0.3
         UIView.animate(withDuration: 0.3) {
             self.alpha = 1
         }

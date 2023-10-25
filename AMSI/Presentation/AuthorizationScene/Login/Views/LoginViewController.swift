@@ -93,7 +93,7 @@ final class LoginViewController: UIViewController {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
     }
 
-    @objc private func keyboardWillHide(notification: Notification) {
+    @objc private func keyboardWillHide(notification _: Notification) {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.isScrollEnabled = false
     }
@@ -142,7 +142,10 @@ final class LoginViewController: UIViewController {
             make.height.equalTo(22)
             make.left.right.equalToSuperview().inset(24)
         }
+        setupInputContainerStackView()
+    }
 
+    private func setupInputContainerStackView() {
         contentView.addSubview(inputContainerStackView)
         inputContainerStackView.snp.makeConstraints { make in
             make.bottom.equalTo(forgotPasswordLabel.snp.top).offset(-24)

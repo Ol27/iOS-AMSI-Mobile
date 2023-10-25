@@ -5,8 +5,8 @@
 //  Created by Anton Petrov on 25.10.2023.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class SearchTextField: UITextField {
     private let padding = UIEdgeInsets(top: 0, left: 42, bottom: 0, right: 0)
@@ -30,8 +30,8 @@ final class SearchTextField: UITextField {
         font = textFont
         self.textColor = textColor
         attributedPlaceholder = NSAttributedString(string: placeholderText,
-                                                        attributes: [NSAttributedString.Key.foregroundColor: placeholderColor,
-                                                                     NSAttributedString.Key.font: placeholderFont])
+                                                   attributes: [NSAttributedString.Key.foregroundColor: placeholderColor,
+                                                                NSAttributedString.Key.font: placeholderFont])
         let magnifyingImageView = UIImageView(image: Assets.Images.Shared.searchGlass.image)
         magnifyingImageView.contentMode = .scaleAspectFit
         addSubview(magnifyingImageView)
@@ -42,7 +42,8 @@ final class SearchTextField: UITextField {
         }
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
