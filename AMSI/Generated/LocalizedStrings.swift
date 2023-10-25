@@ -107,6 +107,8 @@ internal enum LocalizedStrings {
   internal static let resetPasswordTitle = LocalizedStrings.tr("Localizable", "ResetPasswordTitle", fallback: "Reset your password")
   /// Save
   internal static let saveButton = LocalizedStrings.tr("Localizable", "SaveButton", fallback: "Save")
+  /// Search events
+  internal static let searchEvents = LocalizedStrings.tr("Localizable", "SearchEvents", fallback: "Search events")
   /// Search and find your dream job 
   /// easily and quickly
   internal static let secondOnboardingText = LocalizedStrings.tr("Localizable", "SecondOnboardingText", fallback: "Search and find your dream job \neasily and quickly")

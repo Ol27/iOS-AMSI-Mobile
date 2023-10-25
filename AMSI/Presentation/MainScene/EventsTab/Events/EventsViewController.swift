@@ -10,7 +10,7 @@ import UIKit
 
 final class EventsViewController: UIViewController {
     // MARK: - UI Elements
-    
+
     private let topStackView = UIStackView().apply {
         $0.spacing = 8
     }
@@ -24,9 +24,26 @@ final class EventsViewController: UIViewController {
 
     private let mapButtonImageView = UIImageView().apply {
         $0.image = Assets.Images.Events.mapButton.image
+        $0.isUserInteractionEnabled = true
     }
 
     private let eventsTableView = UITableView()
+
+    // MARK: - Properties
+
+    private let events: [Event]
+    weak var coordinator: AuthCoordinatorProtocol?
+
+    // MARK: - Initialization
+
+    init(events: [Event] = mockEvents) {
+        self.events = events
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
 
@@ -34,6 +51,7 @@ final class EventsViewController: UIViewController {
         super.viewDidLoad()
         setupTopStackView()
         setupTableView()
+        setupSelectors()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +62,14 @@ final class EventsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
+    }
+
+    // MARK: - Actions
+
+    @objc private func didTapMapButton() {
+        mapButtonImageView.fadeInWithFeedback()
+        let viewController = EventsMapViewController(events: events)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     // MARK: - Setup
@@ -72,19 +98,24 @@ final class EventsViewController: UIViewController {
         eventsTableView.delegate = self
         eventsTableView.contentInset = .init(top: 0, left: 0, bottom: 80, right: 0)
     }
+
+    private func setupSelectors() {
+        let mapTapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapMapButton))
+        mapButtonImageView.addGestureRecognizer(mapTapGesture)
+    }
 }
 
 // MARK: - UITableViewDataSource
 
 extension EventsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mockEvents.count
+        events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.reuseIdentifier,
                                                        for: indexPath) as? EventCell,
-                let event = mockEvents.safeElement(at: indexPath.row)
+                let event = events.safeElement(at: indexPath.row)
         else { return UITableViewCell() }
         cell.configure(withEvent: event)
         return cell
@@ -95,7 +126,7 @@ extension EventsViewController: UITableViewDataSource {
 
 extension EventsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let event = mockEvents.safeElement(at: indexPath.row) else { return }
+        guard let event = events.safeElement(at: indexPath.row) else { return }
         let viewController = EventViewController(event: event)
         navigationController?.pushViewController(viewController, animated: true)
     }

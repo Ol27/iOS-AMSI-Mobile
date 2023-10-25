@@ -1,5 +1,5 @@
 //
-//     SuccessViewController.swift
+//  SuccessViewController.swift
 //  AMSI
 //
 //  Created by Anton Petrov on 10.10.2023.

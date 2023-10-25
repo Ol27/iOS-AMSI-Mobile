@@ -29,9 +29,7 @@ final class EventViewController: UIViewController {
         $0.image = Assets.Images.EventDetails.heartButton.image
     }
 
-    private let eventInfoScrollView = UIScrollView().apply {
-        $0.contentInset = .init(top: 0, left: 0, bottom: 100, right: 0)
-    }
+    private let eventInfoScrollView = UIScrollView()
 
     private let eventInfoStackView = UIStackView().apply {
         $0.axis = .vertical
@@ -158,11 +156,13 @@ final class EventViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        hideCustomTabBar()
         navigationController?.navigationBar.isHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        showCustomTabBar()
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -271,6 +271,10 @@ extension EventViewController {
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(topStackView.snp.bottom).offset(8)
         }
+        eventInfoScrollView.contentInset = .init(top: 0,
+                                                 left: 0,
+                                                 bottom: safeAreaBottomHeight,
+                                                 right: 0)
     }
 
     private func setupStackView() {

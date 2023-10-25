@@ -11,6 +11,8 @@ import UIKit
 final class MainTabBarController: UITabBarController {
     // MARK: - UI Elements
 
+    private let customTabBarContainer = UIView()
+
     private let tabBarBackgroundImageView = UIImageView(image: Assets.Images.MainTabBar.tabBarBackground.image).apply {
         $0.contentMode = .scaleToFill
         $0.isUserInteractionEnabled = true
@@ -99,6 +101,25 @@ final class MainTabBarController: UITabBarController {
         selectedTab = .profile
     }
 
+    // MARK: - Tab bar hide
+
+    func hideTabBar() {
+        UIView.animate(withDuration: 0.3) {
+            self.customTabBarContainer.transform = CGAffineTransform(translationX: 0,
+                                                                     y: self.customTabBarContainer.bounds.height)
+        } completion: { _ in
+            self.customTabBarContainer.isHidden = true
+
+        }
+    }
+
+    func showTabBar() {
+        customTabBarContainer.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.customTabBarContainer.transform = CGAffineTransform.identity
+        }
+    }
+
     // MARK: - Tab switches
 
     private func switchTab() {
@@ -128,7 +149,6 @@ final class MainTabBarController: UITabBarController {
         searchButton.image = Assets.Images.MainTabBar.searchUnselected.image
         jobsTabImageView.image = Assets.Images.MainTabBar.jobsUnselected.image
         profileTabImageView.image = Assets.Images.MainTabBar.profileUnselected.image
-
         homeTabSelectionImageView.isHidden = true
         eventsTabSelectionImageView.isHidden = true
         jobsTabSelectionImageView.isHidden = true
@@ -140,13 +160,19 @@ final class MainTabBarController: UITabBarController {
     private func setupUI() {
         tabBar.isHidden = true
 
-        view.addSubview(tabBarBackgroundImageView)
+        view.addSubview(customTabBarContainer)
+        customTabBarContainer.snp.makeConstraints { make in
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(99)
+        }
+
+        customTabBarContainer.addSubview(tabBarBackgroundImageView)
         tabBarBackgroundImageView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
             make.height.equalTo(81)
         }
 
-        view.addSubview(searchButton)
+        customTabBarContainer.addSubview(searchButton)
         searchButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(tabBarBackgroundImageView.snp.top).offset(-18)
@@ -172,45 +198,45 @@ final class MainTabBarController: UITabBarController {
         tabContainerStackView.addArrangedSubview(jobsTabImageView)
         tabContainerStackView.addArrangedSubview(profileTabImageView)
 
-        view.addSubview(homeTabButton)
+        customTabBarContainer.addSubview(homeTabButton)
         homeTabButton.snp.makeConstraints { make in
             make.center.equalTo(homeTabImageView)
         }
 
-        view.addSubview(eventsTabButton)
+        customTabBarContainer.addSubview(eventsTabButton)
         eventsTabButton.snp.makeConstraints { make in
             make.center.equalTo(eventsTabImageView)
         }
 
-        view.addSubview(jobsTabButton)
+        customTabBarContainer.addSubview(jobsTabButton)
         jobsTabButton.snp.makeConstraints { make in
             make.center.equalTo(jobsTabImageView)
         }
 
-        view.addSubview(profileTabButton)
+        customTabBarContainer.addSubview(profileTabButton)
         profileTabButton.snp.makeConstraints { make in
             make.center.equalTo(profileTabImageView)
         }
 
-        view.addSubview(homeTabSelectionImageView)
+        customTabBarContainer.addSubview(homeTabSelectionImageView)
         homeTabSelectionImageView.snp.makeConstraints { make in
             make.centerX.equalTo(homeTabImageView)
             make.top.equalTo(homeTabImageView.snp.bottom).offset(4)
         }
 
-        view.addSubview(eventsTabSelectionImageView)
+        customTabBarContainer.addSubview(eventsTabSelectionImageView)
         eventsTabSelectionImageView.snp.makeConstraints { make in
             make.centerX.equalTo(eventsTabImageView)
             make.top.equalTo(eventsTabImageView.snp.bottom).offset(4)
         }
 
-        view.addSubview(jobsTabSelectionImageView)
+        customTabBarContainer.addSubview(jobsTabSelectionImageView)
         jobsTabSelectionImageView.snp.makeConstraints { make in
             make.centerX.equalTo(jobsTabImageView)
             make.top.equalTo(jobsTabImageView.snp.bottom).offset(4)
         }
 
-        view.addSubview(profileTabSelectionImageView)
+        customTabBarContainer.addSubview(profileTabSelectionImageView)
         profileTabSelectionImageView.snp.makeConstraints { make in
             make.centerX.equalTo(profileTabImageView)
             make.top.equalTo(profileTabImageView.snp.bottom).offset(4)

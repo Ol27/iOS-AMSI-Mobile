@@ -8,7 +8,6 @@
 import SnapKit
 import UIKit
 
-
 final class EventCell: UITableViewCell, ReuseIdentifier {
     // MARK: - UI Elements
 

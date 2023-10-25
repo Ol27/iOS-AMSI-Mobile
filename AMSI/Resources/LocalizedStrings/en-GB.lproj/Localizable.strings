@@ -110,6 +110,10 @@
 "EventContactInfoTitle" = "Contact Information";
 "EventAboutTitle" = "About this event";
 
+// MARK: - Event maps screen
+
+"SearchEvents" = "Search events";
+
 // MARK: - Calendar permissions alert
 
 "CalendarPermissionsAlertTitle" = "Insufficient permissions";

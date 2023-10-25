@@ -68,6 +68,7 @@ internal enum Assets {
     }
     internal enum Events {
       internal static let mapButton = ImageAsset(name: "MapButton")
+      internal static let mapEventsIndicator = ImageAsset(name: "MapEventsIndicator")
       internal static let searchButton = ImageAsset(name: "SearchButton")
     }
     internal enum FillData {
@@ -123,6 +124,7 @@ internal enum Assets {
       internal static let orSeparator = ImageAsset(name: "OrSeparator")
       internal static let separatorDot = ImageAsset(name: "SeparatorDot")
       internal static let pickArrow = ImageAsset(name: "pickArrow")
+      internal static let searchGlass = ImageAsset(name: "searchGlass")
       internal static let selectedArrow = ImageAsset(name: "selectedArrow")
     }
     internal enum SignUp {
