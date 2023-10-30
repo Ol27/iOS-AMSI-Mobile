@@ -70,10 +70,10 @@
 		3A6D6E942AD9AF44003EE439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */; };
 		3A6D6E972AD9B026003EE439 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */; };
 		3A9B7D892AE951070015F837 /* EventMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B7D882AE951070015F837 /* EventMarkerView.swift */; };
+		3AA555A92AEA4E3B00D3CB7B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA555A82AEA4E3B00D3CB7B /* SearchViewController.swift */; };
 		3AB0B3442ADD506D00F79316 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3432ADD506D00F79316 /* MainTab.swift */; };
 		3AB0B3472ADD60D500F79316 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3462ADD60D500F79316 /* HomeViewController.swift */; };
 		3AB0B34A2ADD610F00F79316 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3492ADD610F00F79316 /* EventsViewController.swift */; };
-		3AB0B34D2ADD613100F79316 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B34C2ADD613100F79316 /* SearchViewController.swift */; };
 		3AB0B3502ADD614A00F79316 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B34F2ADD614A00F79316 /* JobsViewController.swift */; };
 		3AB0B3532ADD616000F79316 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0B3522ADD616000F79316 /* ProfileViewController.swift */; };
 		3AD203442AE7DB56005169C2 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD203432AE7DB56005169C2 /* EventCell.swift */; };
@@ -157,10 +157,10 @@
 		3A6D6E932AD9AF44003EE439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A6D6E962AD9B026003EE439 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3A9B7D882AE951070015F837 /* EventMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMarkerView.swift; sourceTree = "<group>"; };
+		3AA555A82AEA4E3B00D3CB7B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3AB0B3432ADD506D00F79316 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		3AB0B3462ADD60D500F79316 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3AB0B3492ADD610F00F79316 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		3AB0B34C2ADD613100F79316 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3AB0B34F2ADD614A00F79316 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		3AB0B3522ADD616000F79316 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3AD203432AE7DB56005169C2 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -685,7 +685,7 @@
 		3AB0B34B2ADD612600F79316 /* SearchTab */ = {
 			isa = PBXGroup;
 			children = (
-				3AB0B34C2ADD613100F79316 /* SearchViewController.swift */,
+				3AA555A82AEA4E3B00D3CB7B /* SearchViewController.swift */,
 			);
 			path = SearchTab;
 			sourceTree = "<group>";
@@ -767,8 +767,6 @@
 			buildConfigurationList = 3A1405D02AD4262000ED8636 /* Build configuration list for PBXNativeTarget "AMSI" */;
 			buildPhases = (
 				0B57CC25E57DB5EFFA9F35E1 /* [CP] Check Pods Manifest.lock */,
-				3A39307D2AE07EA2004CB6C9 /* SwiftLint */,
-				3A1405DD2AD4283300ED8636 /* SwiftGen */,
 				3A1405B82AD4261F00ED8636 /* Sources */,
 				3A1405B92AD4261F00ED8636 /* Frameworks */,
 				3A1405BA2AD4261F00ED8636 /* Resources */,
@@ -880,44 +878,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A1405DD2AD4283300ED8636 /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ -x /opt/homebrew/bin/swiftgen ]; then\n  /opt/homebrew/bin/swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
-		};
-		3A39307D2AE07EA2004CB6C9 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -937,7 +897,6 @@
 				3A4CB85A2ADED0B900F4A1BF /* TabCoordinator.swift in Sources */,
 				3A14061F2AD4AC3B00ED8636 /* VerificationViewController.swift in Sources */,
 				3A48E9E92AE933BF005F18BF /* UIViewController+TabBarHide.swift in Sources */,
-				3AB0B34D2ADD613100F79316 /* SearchViewController.swift in Sources */,
 				3A41C6232ADFE7E1007BCDD2 /* Event.swift in Sources */,
 				3A9B7D892AE951070015F837 /* EventMarkerView.swift in Sources */,
 				3A48E9ED2AE940E4005F18BF /* ApiKeys.swift in Sources */,
@@ -987,6 +946,7 @@
 				3A4CB85C2ADED40300F4A1BF /* Coordinator.swift in Sources */,
 				3A6D6E5B2AD95427003EE439 /* SettingsManager.swift in Sources */,
 				3A6D6E572AD84714003EE439 /* AddressDataCell.swift in Sources */,
+				3AA555A92AEA4E3B00D3CB7B /* SearchViewController.swift in Sources */,
 				3A1405EC2AD4301900ED8636 /* Applyable.swift in Sources */,
 				3A6D6E712AD97B95003EE439 /* City.swift in Sources */,
 				3AD203442AE7DB56005169C2 /* EventCell.swift in Sources */,

@@ -185,7 +185,7 @@ extension EventsMapViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.reuseIdentifier,
                                                        for: indexPath) as? EventCell,
-            let event = events.safeElement(at: indexPath.row)
+              let event = events.safeElement(at: indexPath.row)
         else { return UITableViewCell() }
         cell.configure(withEvent: event)
         return cell
